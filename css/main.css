@@ -1,4 +1,14 @@
-body {
-    font-family: Verdana, Helvetica, sans-serif;
-    background-color: #FFFFCC;
+/*
+ * Customizations on template theme and bootstrap css.
+ */
+.site-down {
+    background: url(../img/retro/404.jpg) no-repeat center center;
+    background-size: contain;
+    background-color: black;
+    height: 100%;
 }
+ 
+ .intro-message { 
+    padding-top: 5%;
+    padding-bottom: 2%;
+ }
