@@ -1,0 +1,98 @@
+/* @group Blink */
+
+.blink {
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+    animation: blink .75s linear infinite;
+}
+
+@-webkit-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-ms-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-o-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* @end */
+
+
+
+/* @group Marquee */
+
+.marquee {
+    height: 30px;
+    
+    overflow: hidden;
+    position: relative;
+}
+    .marquee div {
+        display: block;
+        width: 200%;
+        height: 30px;
+        
+        position: absolute;
+        overflow: hidden;
+        
+        -webkit-animation: marquee 4s linear infinite;
+        -moz-animation: marquee 4s linear infinite;
+        -ms-animation: marquee 4s linear infinite;
+        -o-animation: marquee 4s linear infinite;
+        animation: marquee 4s linear infinite;
+    }
+    .marquee span {
+        float: left;
+        width: 50%;
+    }
+    
+@-webkit-keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
+@-moz-keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
+@-ms-keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
+@-o-keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
+@keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
+
+/* @end */

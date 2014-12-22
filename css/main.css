@@ -7,8 +7,20 @@
     background-color: black;
     height: 100%;
 }
- 
+
  .intro-message { 
     padding-top: 5%;
     padding-bottom: 2%;
- }
+}
+
+
+.retro  h1, .retro h2, .retro h3, .retro h4, .retro h5, .retro h6 {
+    font-family: "Comic Sans MS", cursive, sans-serif
+}
+.retro {
+    font-family: "Times New Roman", Times, serif
+}
+.retro .marquee {
+    width: 400px;
+    margin: 0 auto;
+}

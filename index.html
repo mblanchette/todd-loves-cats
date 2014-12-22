@@ -14,6 +14,7 @@
     <!-- Custom Bootstrap theme -->
     <link href="css/template.css" rel="stylesheet">
     <!-- App CSS -->
+    <link href="css/retro-animation.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     
     <!-- Custom Fonts -->
@@ -31,7 +32,7 @@
 <body ng-controller="MainCtrl">
     <div class="site-down" data-ng-show="sitedown404" data-ng-click="sitedown404=false">
     </div>
-    <div data-ng-show="!sitedown404">
+    <div data-ng-show="!sitedown404" data-ng-class="{'retro':retro}">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -72,11 +73,15 @@
                     <div class="col-lg-12">
                         <div class="intro-message">
                             <img data-ng-show="retro" src="img/todd-cat-heart.png" alt="" />
-                            <h1 data-ng-if="!xmas && !saturday">Todd Loves Cats</h1>
-                            <h1 data-ng-if="saturday">Todd Loves Caturday</h1>
-                            <h1 data-ng-if="xmas && !saturday">Todd Loves Catmas</h1>
+                            <h1 data-ng-class="{'blink':retro}">
+                                <span>Todd Loves </span>
+                                <span data-ng-show="!xmas && !saturday">Cats</span>
+                                <span data-ng-show="saturday">Caturday</span>
+                                <span data-ng-show="xmas && !saturday">Catmas</span>
+                            </h1>
                             <hr class="intro-divider">
-                            <h3>A website dedicated to Todd and his love of cats</h3>
+                            <div class="marquee" data-ng-show="retro"><div><span>A website dedicated to Todd and his love of cats</span><span>A website dedicated to Todd and his love of cats</span></div></div>
+                            <h3 data-ng-show="!retro">A website dedicated to Todd and his love of cats</h3>
                         </div>
                     </div>
                 </div>
