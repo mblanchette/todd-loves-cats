@@ -46,7 +46,8 @@
 .intro-image.xmas {
     background-color: #329a43; /* green */
 }
-.main-content.xmas-retro-bg {
+.main-content.xmas-retro-bg .content-section-b {
+    /* background only added to sections that don't already have one */
     background: url(../img/xmas/snowflakes_fall.gif) repeat left top;
     background-size: 150px;
 }
@@ -86,7 +87,8 @@
 .retro-text {
     font-family: "Times New Roman", Times, serif
 }
-.main-content.retro-bg {
+.main-content.retro-bg .content-section-b {
+    /* background only added to sections that don't already have one */
     background: url(../img/retro/hearts-fall.gif) repeat left top;
     background-size: 150px;
 }
