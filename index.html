@@ -32,10 +32,10 @@
 <body ng-controller="MainCtrl">
     <div class="site-down" data-ng-show="sitedown404" data-ng-click="sitedown404=false">
     </div>
-    <div data-ng-show="!sitedown404" data-ng-class="{'retro':retro}">
+    <div data-ng-show="!sitedown404" data-ng-class="{'retro-bg':retro&&!xmas,'xmas-retro-bg':retro&&xmas,'retro-text':retro}" class="main-content">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
+            <div class="container nav-menu-container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -58,6 +58,9 @@
                         <li data-ng-repeat="sec in sections">
                             <a data-ng-href="#{{sec.nav}}" data-ng-bind="sec.name"></a>
                         </li>
+                        <li data-ng-show="retro">
+                            <a class="retro-new" data-ng-click="sitedown404=true"><img src="img/retro/new.gif" alt="" /></a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -67,21 +70,21 @@
         
         <a name="home"></a>
         <!-- Header -->
-        <div class="intro-header bg-primary">
+        <div class="intro-header bg-primary" data-ng-class="{'modern':!retro&&!xmas,'retro':retro&&!xmas,'xmas-retro':xmas&&retro,'xmas':xmas&&!retro}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="intro-message">
-                            <img data-ng-show="retro" src="img/todd-cat-heart.png" alt="" />
-                            <h1 data-ng-class="{'blink':retro}">
+                            <img data-ng-show="retro" src="img/todd-cat-heart.png" class="intro-image" data-ng-class="{'xmas':xmas}" alt="" />
+                            <h1 data-ng-class="{'blink':retro,'xmas-text':xmas&&!retro}">
                                 <span>Todd Loves </span>
                                 <span data-ng-show="!xmas && !saturday">Cats</span>
                                 <span data-ng-show="saturday">Caturday</span>
                                 <span data-ng-show="xmas && !saturday">Catmas</span>
                             </h1>
                             <hr class="intro-divider">
-                            <div class="marquee" data-ng-show="retro"><div><span>A website dedicated to Todd and his love of cats</span><span>A website dedicated to Todd and his love of cats</span></div></div>
-                            <h3 data-ng-show="!retro">A website dedicated to Todd and his love of cats</h3>
+                            <div class="marquee" data-ng-show="retro" data-ng-class="{'xmas-text':xmas&&!retro}"><div><span>A website dedicated to Todd and his love of cats</span><span>A website dedicated to Todd and his love of cats</span></div></div>
+                            <h3 data-ng-show="!retro" data-ng-class="{'xmas-text':xmas&&!retro}">A website dedicated to Todd and his love of cats</h3>
                         </div>
                     </div>
                 </div>
@@ -97,13 +100,21 @@
             <div class="container">
                 <div class="row">
                     <div data-ng-class-odd="'col-lg-5 col-sm-6'" data-ng-class-even="'col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6'">
-                        <hr class="section-heading-spacer">
+                        <hr class="section-heading-spacer" data-ng-class="{'xmas':xmas}" data-ng-show="!xmas||!retro">
+                        <img data-ng-show="xmas&&retro" class="img-responsive" src="img/xmas/xmas-lights.gif" alt=""/>
+                        
                         <div class="clearfix"></div>
                         <h2 class="section-heading" data-ng-bind="sec.heading"></h2>
                         <p class="lead" data-ng-bind="sec.text"></p>
+                        <div data-ng-show="retro&&(!xmas||!sec.retroXmasImages)" class="retro-anim-img">
+                            <img data-ng-repeat="imgName in sec.retroImages" data-ng-src="img/retro/{{imgName}}" alt=""/>
+                        </div>
+                        <div data-ng-show="retro&&xmas" class="retro-xmas-anim-img">
+                            <img data-ng-repeat="imgName in sec.retroXmasImages" data-ng-src="img/xmas/{{imgName}}" alt=""/>
+                        </div>
                     </div>
                     <div data-ng-class-odd="'col-lg-5 col-lg-offset-2 col-sm-6'" data-ng-class-even="'col-lg-5 col-sm-pull-6  col-sm-6'">
-                        <a data-ng-repeat="imgName in sec.images" data-ng-href="img/{{imgName}}"><img class="img-responsive" data-ng-src="img/{{imgName}}" alt=""></a>
+                        <a data-ng-repeat="imgName in sec.images" data-ng-href="img/{{imgName}}"><img class="img-responsive" data-ng-src="img/{{imgName}}" alt=""/></a>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -112,7 +123,7 @@
         </div>
         <!-- /.content-section-a/b -->
         
-        <div class="banner" data-ng-show="saturday">
+        <div class="banner" data-ng-show="saturday" data-ng-class="{'modern':!retro&&!xmas,'retro':retro&&!xmas,'xmas-retro':xmas&&retro,'xmas':xmas&&!retro}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -149,6 +160,18 @@
                             </li>
                         </ul>
                         <p class="copyright text-muted small">Copyright &copy; ToddLovesCats 2014. All Rights Reserved</p>
+                    </div>
+                </div>
+                <div class="row" data-ng-show="retro">
+                    <div class="col-lg-4 col-md-4 text-center">
+                        <img src="img/retro/geocities.jpg" alt="" />
+                    </div>
+                    <div class="col-lg-4 col-md-4 text-center">
+                        <img src="img/retro/counter.gif" alt="" />
+                    </div>
+                    <div class="col-lg-4 col-md-4 text-center">
+                        <img src="img/retro/ns_logo.gif" alt="" />
+                        <img src="img/retro/ie_logo.gif" alt="" />
                     </div>
                 </div>
             </div>

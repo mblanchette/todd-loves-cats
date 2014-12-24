@@ -1,26 +1,111 @@
 /*
  * Customizations on template theme and bootstrap css.
  */
+ 
+/* Responsive */
+
+@media (min-width: 768px) and (max-width: 992px) {
+    /* Avoid menu being broken into 2 lines and overlapping content */
+    .container.nav-menu-container {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+/* General */
+
 .site-down {
     background: url(../img/retro/404.jpg) no-repeat center center;
     background-size: contain;
     background-color: black;
     height: 100%;
 }
-
- .intro-message { 
+.intro-message { 
     padding-top: 5%;
     padding-bottom: 2%;
 }
-
-
-.retro  h1, .retro h2, .retro h3, .retro h4, .retro h5, .retro h6 {
-    font-family: "Comic Sans MS", cursive, sans-serif
+.intro-image {
+    background-color: white;
+    max-width: 100%;
 }
-.retro {
+.intro-header {
+    background-size: auto;
+}
+.banner {
+    /* reusing same image from header intro */
+    background: url(../img/intro-bg.jpg) no-repeat center bottom;
+    background-size: auto;
+}
+.banner.modern {
+    /* image has white background for non-retro/non-xmas */
+    color: #dfdfdf;
+}
+
+/* X-mas style*/
+
+.intro-image.xmas {
+    background-color: #329a43; /* green */
+}
+.main-content.xmas-retro-bg {
+    background: url(../img/xmas/snowflakes_fall.gif) repeat left top;
+    background-size: 150px;
+}
+.xmas-text {
+    color: #329a43; /* green */
+}
+.intro-header.xmas-retro {
+    background: url(../img/xmas/hello-kitty.gif) repeat left top;
+    background-size: 150px;
+}
+.intro-header.xmas {
+    background: url(../img/xmas/intro-bg.jpg) no-repeat center center;
+}
+.banner.xmas-retro {
+    /* dark red color copied from intro header image */
+    background: #d01242 url(../img/xmas/nyan.gif) repeat left top;
+    background-size: 100px;
+}
+.banner.xmas {
+    background: url(../img/xmas/intro-bg.jpg) no-repeat center top;
+    color: #329a43; /* green */
+}
+.section-heading-spacer.xmas {
+    /* lighter green color version of text */
+    border-top: 3px solid #70b87b;
+}
+.retro-xmas-anim-img img {
+    max-height: 100px;
+}
+
+/* Retro style */
+
+.retro-text  h1, .retro-text h2, .retro-text h3, .retro-text h4, .retro-text h5, .retro-text h6 {
+    /* Chalkboard is included for iPhone, avoid rendering as cursive */
+    font-family: "Chalkboard SE", "Comic Sans MS", cursive, sans-serif
+}
+.retro-text {
     font-family: "Times New Roman", Times, serif
 }
-.retro .marquee {
+.main-content.retro-bg {
+    background: url(../img/retro/hearts-fall.gif) repeat left top;
+    background-size: 150px;
+}
+.retro-new  img {
+    height: 20px;
+}
+.intro-message .marquee {
     width: 400px;
     margin: 0 auto;
+}
+.intro-header.retro {
+    background: url(../img/retro/slide-nyan.gif) repeat left top;
+    background-size: 100px;
+}
+.banner.retro {
+    /* dark blue color copied from intro header image */
+    background: #003366 url(../img/retro/nyan.gif) repeat left top;
+    background-size: 100px;
+}
+.retro-anim-img img {
+    max-height: 100px;
 }
