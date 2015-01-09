@@ -60,10 +60,10 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li data-ng-class="{'active':retro}"><a data-ng-click="retro=true">Retro</a></li>
-                        <li data-ng-class="{'active':!retro}"><a data-ng-click="retro=false">Modern</a></li>
-                        <li data-ng-class="{'active':xmas}"><a data-ng-click="xmas=!xmas">X-Mas</a><li>
-                        <li data-ng-class="{'active':saturday}"><a data-ng-click="saturday=!saturday">Saturday</a></li>
+                        <li data-ng-class="{'active':retro}"><a data-ng-click="retro=true; changedView()">Retro</a></li>
+                        <li data-ng-class="{'active':!retro}"><a data-ng-click="retro=false; changedView()">Modern</a></li>
+                        <li data-ng-class="{'active':xmas}"><a data-ng-click="xmas=!xmas; changedView()">X-Mas</a><li>
+                        <li data-ng-class="{'active':saturday}"><a data-ng-click="saturday=!saturday; changedView()">Saturday</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li data-ng-repeat="sec in sections">
@@ -171,6 +171,14 @@
                             </li>
                         </ul>
                         <p class="copyright text-muted small">Copyright &copy; ToddLovesCats 2014. All Rights Reserved</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 text-center">
+                    <audio id="audio1-retro" data-ng-src="audio/tom-jones-whats-new-pussycat.mp3" controls="controls" loop="loop" autoplay="autoplay" preload="auto" data-ng-if="retro&&!xmas"></audio>
+                    <audio id="audio2-modern" data-ng-src="audio/meow-mix-song-remix.mp3" controls="controls" loop="loop" autoplay="autoplay" preload="auto" data-ng-if="!retro&&!xmas"></audio>
+                    <audio id="audio3-retroxmas" data-ng-src="audio/elton-john-honky-cat.mp3" controls="controls" loop="loop" autoplay="autoplay" preload="auto" data-ng-if="retro&&xmas"></audio>
+                    <audio id="audio4-xmas" data-ng-src="audio/jingle-cats-white-christmas.mp3" controls="controls" loop="loop" autoplay="autoplay" preload="auto" data-ng-if="!retro&&xmas"></audio>
                     </div>
                 </div>
                 <div class="row" data-ng-show="retro">
