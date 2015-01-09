@@ -17,6 +17,7 @@ tlcApp.controller('MainCtrl', function ($scope,$timeout) {
          } else {
            this.volume = 0.5;
          }
+         this.play();
        });
     });
   };
