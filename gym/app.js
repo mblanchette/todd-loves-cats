@@ -55,11 +55,10 @@ angular.module('gymApp', [])//, ['ngMaterial', "ngRoute"])
       return workDate;
     }
     
-    var today = {};
     var currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0); // clear time from date for comparison
     
-    $scope.today = today;
+    $scope.today = {};
     $scope.currentDate = currentDate;
     $scope.weeks = weeks;
     
@@ -71,8 +70,8 @@ angular.module('gymApp', [])//, ['ngMaterial', "ngRoute"])
           
           var isToday = workDate.getTime() === currentDate.getTime();
           if( isToday ) {
-            today.week = week.id;
-            today.day = day.id;
+            $scope.today.week = week.id;
+            $scope.today.day = day.id;
           }
         });
       });
@@ -81,6 +80,9 @@ angular.module('gymApp', [])//, ['ngMaterial', "ngRoute"])
     $log.log('today', $scope.today);
     
     $scope.changeStartDate = function() {
+      // reset today values for week/day, will change
+      $scope.today = {};
+      
       var start = $scope.startDate;
       $log.log('changed start date', start);
       if( !start ) return; // invalid, no date is specified

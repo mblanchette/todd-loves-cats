@@ -54,7 +54,7 @@ var weeks = [
         type: dayTypes.STRENGTH_TRAINING.code,
         desc: 'Upper Body Pull / Core',
         exercises: [
-          {id: 5, sets: 4, reps: '10-12', time: null, tofail: false, name: 'Lat Pulldowns', notes: 'Drape tubing over high bar if no pulldown unit available'},
+          {id: 12, sets: 4, reps: '10-12', time: null, tofail: false, name: 'Lat Pulldowns', notes: 'Drape tubing over high bar if no pulldown unit available'},
           {id: 84, sets: 3, reps: '12', time: null, tofail: false, name: 'DB Renegade Row', notes: 'Each set consists of 12 rows on each arm'},
           {id: 82, sets: 4, reps: '10-12', time: null, tofail: false, name: 'DB Fielder Curls', notes: 'Maintain your solid lower back positioning '},
           {id: 32, sets: 3, reps: '15', time: null, tofail: false, name: 'Physioball Reverse Hyperext.', notes: 'Lift legs by contracting glutes and lower back'},
@@ -69,6 +69,11 @@ var exercises = {
   5: {
     name:'Underhand Pulldowns',
     desc:'To perform the Underhand Pulldown, position yourself under a high pulley machine and grasp the bar with an underhand shoulder width grip. Keeping your torso upright and a slight arch in the low back for support; squeeze the shoulder blades together and pull the bar to the level of the sternum. Slowly return the bar to the starting position.',
+    images: 2
+  },
+  12: {
+    name:'Lat Pulldowns',
+    desc:'To perform the Lat Pulldown, attach a straight bar to an overhead pulley and grab the bar at shoulder width with an overhand grip. Lean back slightly and arch the low back slightly for support. Squeeze the shoulder blades and pull the bar down to a point just above your breast bone. Slowly return the bar to the starting position and repeat.',
     images: 2
   },
   32: {
