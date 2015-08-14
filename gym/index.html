@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Gym Workout Program</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="http://gitcdn.xyz/repo/angular/bower-material/v0.10.1/angular-material.css"/>
+    <link rel="stylesheet" href="./app.css"/>
+  </head>
+  <!-- 
+  Layout from https://material.angularjs.org
+  Icons (SVG) from https://materialdesignicons.com/
+  -->
+  
+  <body ng-app="gymApp" ng-controller="AppController">
+
+    <div layout="column" layout-margin="">
+      <div>
+        <div>Today is: {{currentDate | date:'fullDate'}}</div>
+        <div ng-show="today.week&&today.day">Week {{today.week}} Day {{today.day}}</div>
+        <br/>
+        <div>Week 1 began on:</div>
+        <div><input type="date" ng-model="startDate" ng-change="changeStartDate()" placeholder="yyyy-MM-dd"/></div>
+      </div>
+      <div layout="row" layout-padding="">
+        <div flex="10">
+          <br/>
+          <div ng-repeat="week in weeks">
+            <button ng-click="showWeek(week)">Week {{week.id}}</button>
+          </div>
+        </div>
+        <div flex="20" g-show="week">
+          <div ng-repeat="day in week.days">
+            <h4 ng-class="{'today':(today&&today.week===week.id&&today.day===day.id)}">
+            Day {{day.id}} - {{day.date | date:'fullDate'}}</h4>
+            <div>{{day.type}}</div>
+            <div>{{day.desc}}</div>
+            <button ng-click="showDay(day)">Exercises</button>
+          </div>
+        </div>
+        <div flex="20" ng-show="day">
+          <div ng-repeat="exercise in day.exercises">
+            <h4>Exercise {{exercise.id}}</h4>
+            <div>{{exercise.name}}</div>
+            <div ng-show="exercise.sets">Sets: {{exercise.sets}}</div>
+            <div ng-show="exercise.reps">Reps: {{exercise.reps}}</div>
+            <div ng-show="exercise.time">Time: {{exercise.time}}</div>
+            <div ng-show="exercise.tofail">* TO FAIL</div>
+            <div>{{exercise.notes}}</div>
+            <button ng-click="showExercise(exercise.id)">Show</button>
+          </div>
+        </div>
+        <div flex="50" ng-show="exercise">
+          <h2>Exercise {{exerciseId}}</h2>
+          <h3>{{exercise.name}}</h3>
+          <div>{{exercise.desc}}</div>
+          <div>{{exercise.images}}</div>
+          <div ng-repeat="image in getExerciseImages(exerciseId)">
+            <img ng-src="./img/exercises/{{image}}.jpg" />
+          </div>
+          <button ng-click="closeExercise()">Close</button>
+        </div>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.min.js"></script>
+    <script type="text/javascript" src="http://gitcdn.xyz/repo/angular/bower-material/v0.10.1/angular-material.js"></script>
+
+    <script type="text/javascript" src="./exercises.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+
+  </body>
+</html>
