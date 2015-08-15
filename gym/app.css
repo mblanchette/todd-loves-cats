@@ -1,16 +1,19 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
 .home-box-width {
   max-width: 300px;
 }
-.day.blue {
+.day.blue, md-list-item.day.blue button.md-button:not([disabled]):hover {
   background: #80d8ff; 
 }
-.day.green {
+.day.green, md-list-item.day.green button.md-button:not([disabled]):hover {
   background: #b9f6ca; 
 }
-.day.red {
+.day.red, md-list-item.day.red button.md-button:not([disabled]):hover {
   background: #ff8a80; 
 }
-.today {
-  color: red;
-}  
-  
+.exercise img {
+  width: 100%;
+}

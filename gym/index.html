@@ -15,7 +15,7 @@
   Icons (SVG) from https://materialdesignicons.com/
   -->
   
-  <body ng-app="gymApp" ng-controller="AppController">
+  <body ng-app="gymApp" ng-controller="AppController" ng-cloak="">
 
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -27,7 +27,7 @@
           <span>Gym</span>
         </h2>
         <span flex=""></span>
-        <md-button class="md-icon-button" aria-label="Star">
+        <md-button class="md-icon-button" aria-label="Star" ng-click="showToday()">
           <md-icon md-svg-icon="star"></md-icon>
         </md-button>
       </div>
@@ -43,20 +43,21 @@
           </md-list-item>
           <md-list-item ng-repeat="week in weeks" ng-click="showWeek(week)">
             <p>Week {{week.id}}</p>
-            <md-icon md-svg-icon="star" ng-show="today.week===week.id"></md-icon>
+            <md-icon md-svg-icon="star" ng-show="today.week.id===week.id"></md-icon>
             <md-divider ng-if="!$last"></md-divider>
           </md-list-item>
         </md-list>
       </md-sidenav>
     
-      <md-content class="home md-padding" ng-show="view==='home'">
+      <md-content class="home md-padding" ng-if="view==='home'">
         <div layout="column">
-          <md-whiteframe class="md-whiteframe-z1 home-box-width" layout-padding="" ng-show="today.week&&today.day">
+          <md-whiteframe class="md-whiteframe-z1 home-box-width day" layout-padding="" ng-if="today.week&&today.day"
+              ng-click="showToday()" ng-class="getDayTypeColor(today.day.type)">
             <md-icon md-svg-icon="star"></md-icon>
             <div>Today is: {{currentDate | date:'fullDate'}}</div>
-            <div>Week {{today.week}} Day {{today.day}}</div>
+            <div>Week {{today.week.id}} Day {{today.day.id}}</div>
           </md-whiteframe>
-          <md-whiteframe class="md-whiteframe-z1 home-box-width" layout-padding="" ng-show="!(today.week&&today.day)">
+          <md-whiteframe class="md-whiteframe-z1 home-box-width" layout-padding="" ng-if="!(today.week&&today.day)">
             <md-icon md-svg-icon="star"></md-icon>
             <div>Today is: {{currentDate | date:'fullDate'}}</div>
             <div>Nothing scheduled today</div>
@@ -70,31 +71,38 @@
         </div>
       </md-content>
   
-      <md-content class="week md-padding" ng-show="view==='week'">
-        <div layout="column">
-        <md-whiteframe class="md-whiteframe-z1 day" layout-padding="" 
-            ng-repeat="day in week.days" class="day" ng-class="getDayTypeColor(day.type)" ng-click="showDay(day)">
-          <md-icon md-svg-icon="star" ng-show="today&&today.week===week.id&&today.day===day.id"></md-icon>
-          <h4 ng-class="{'today':(today&&today.week===week.id&&today.day===day.id)}">
-          Day {{day.id}} - {{day.date | date:'fullDate'}}</h4>
-          <div>{{day.type}}</div>
-          <md-icon md-svg-icon="{{getDayTypeIcon(day.type)}}"></md-icon>
-          <div>{{day.desc}}</div>
-        </md-whiteframe>
-        </div>
+      <md-content class="week md-padding" ng-if="view==='week'">
+        <md-list>
+          <md-list-item ng-repeat="day in week.days" class="day md-3-line" ng-class="getDayTypeColor(day.type)" ng-click="showDay(day)">
+            <div class="md-list-item-text">
+              <md-icon md-svg-icon="star" ng-show="today.week.id===week.id&&today.day.id===day.id"></md-icon>
+              <h3 ng-class="{'today':(today.week.id===week.id&&today.day.id===day.id)}">
+              Day {{day.id}} - {{day.date | date:'fullDate'}}</h3>
+              <h4>{{getDayTypeName(day.type)}}</h4>
+              <p>{{day.desc}}</p>
+            </div>
+            <md-icon md-svg-icon="{{getDayTypeIcon(day.type)}}"></md-icon>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-list-item>
+        </md-list>
       </md-content>
 
-      <md-content class="day md-padding" ng-show="view==='day'">
-        <div ng-repeat="exercise in day.exercises">
-          <h4>Exercise {{exercise.id}}</h4>
-          <div>{{exercise.name}}</div>
-          <div ng-show="exercise.sets">Sets: {{exercise.sets}}</div>
-          <div ng-show="exercise.reps">Reps: {{exercise.reps}}</div>
-          <div ng-show="exercise.time">Time: {{exercise.time}}</div>
-          <div ng-show="exercise.tofail">* TO FAIL</div>
-          <div>{{exercise.notes}}</div>
-          <button ng-click="showExercise(exercise.id, $event)">Show</button>
-        </div>
+      <md-content class="day md-padding" ng-if="view==='day'">
+        <md-list>
+          <md-list-item ng-repeat="exercise in day.exercises" class="md-3-line" ng-click="showExercise(exercise.id, $event)">
+            <div class="md-list-item-text">
+              <h3><span>{{exercise.name}}</span> <span ng-show="exercise.id">({{exercise.id}})</span></h3>
+              <h4>
+                <span ng-show="exercise.sets">{{exercise.sets}}</span> <span>x</span>
+                <span ng-show="exercise.reps">{{exercise.reps}}</span>
+                <span ng-show="exercise.time">{{exercise.time}}</span>
+                <span ng-show="exercise.tofail">(TO FAIL)</span>
+              </h4>
+              <p>{{exercise.notes}}</p>
+            </div>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-list-item>
+        </md-list>
       </md-content>
       
     </section>
@@ -111,10 +119,9 @@
           </div>
         </md-toolbar>
         <md-dialog-content style="max-width:800px;max-height:810px;">
-          <div>
+          <div class="exercise">
             <h3>{{exercise.name}}</h3>
-            <div>{{exercise.desc}}</div>
-            <div>{{exercise.images}}</div>
+            <p>{{exercise.desc}}</p>
             <div ng-repeat="image in getExerciseImages(exerciseId)">
               <img ng-src="./img/exercises/{{image}}.jpg" />
             </div>

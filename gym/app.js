@@ -89,8 +89,8 @@ angular.module('gymApp', ['ngMaterial'])
           
           var isToday = workDate.getTime() === currentDate.getTime();
           if( isToday ) {
-            $scope.today.week = week.id;
-            $scope.today.day = day.id;
+            $scope.today.week = week;
+            $scope.today.day = day;
           }
         });
       });
@@ -118,6 +118,7 @@ angular.module('gymApp', ['ngMaterial'])
     
     $scope.showExercise = function(id, event) {
       $scope.exercise = exercises[id];
+      if( !$scope.exercise ) return;
       $scope.exerciseId = id;
       
       $mdDialog.show({
@@ -162,10 +163,21 @@ angular.module('gymApp', ['ngMaterial'])
       $scope.exercise = null;
       $scope.setView('day');
     }
+    $scope.showToday = function() {
+      if( $scope.today.week ) {
+        $scope.showWeek( $scope.today.week );
+      }
+      if( $scope.today.day ) {
+        $scope.showDay( $scope.today.day );
+      }
+    }
     $scope.getDayTypeIcon = function(dayType) {
       return dayTypes[dayType].icon;
     }
     $scope.getDayTypeColor = function(dayType) {
       return dayTypes[dayType].color;
+    }
+    $scope.getDayTypeName = function(dayType) {
+      return dayTypes[dayType].name;
     }
   });
