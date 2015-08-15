@@ -1,7 +1,7 @@
 var dayTypes = {
-    STRENGTH_TRAINING: {code:'STRENGTH_TRAINING', color:'darkBlue', icon:'dumbell'},
+    STRENGTH_TRAINING: {code:'STRENGTH_TRAINING', color:'blue', icon:'dumbbell'},
     CONDITIONING: {code:'CONDITIONING', color:'green', icon:'run'},
-    CHALLENGE: {code:'CHALLENGE', color:'red', icon:'trophy-variant'}
+    CHALLENGE: {code:'CHALLENGE', color:'red', icon:'trophy'}
 }
 
 // based on javasript date getDay() for day of week, monday-friday 1-5

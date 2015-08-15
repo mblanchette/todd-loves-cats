@@ -1,10 +1,13 @@
-.day .green {
+.home-box-width {
+  max-width: 300px;
+}
+.day.blue {
+  background: #80d8ff; 
+}
+.day.green {
   background: #b9f6ca; 
 }
-.day .green {
-  background: #b9f6ca; 
-}
-.day .red {
+.day.red {
   background: #ff8a80; 
 }
 .today {

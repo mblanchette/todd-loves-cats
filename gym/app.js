@@ -1,25 +1,44 @@
-angular.module('gymApp', [])//, ['ngMaterial', "ngRoute"])
-/*   .config(["$routeProvider", function($routeProvider) {
-      $routeProvider.when("/view1", {templateUrl: "partials/view1.html"});
-      $routeProvider.when("/view2", {templateUrl: "partials/view2.html"});
-      $routeProvider.when("/view3", {templateUrl: "partials/view3.html"});
-      $routeProvider.otherwise({redirectTo: "/view1"});
-  }])
-*/
-  /*.config(function($mdThemingProvider, $mdIconProvider){
+angular.module('gymApp', ['ngMaterial'])
+  .config(function($mdIconProvider){
       $mdIconProvider
-          .defaultIconSet("./assets/svg/avatars.svg", 128)
-          .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-          .icon("share"      , "./assets/svg/share.svg"       , 24)
-          .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-          .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-          .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-          .icon("phone"      , "./assets/svg/phone.svg"       , 512);
-          $mdThemingProvider.theme('default')
-              .primaryPalette('brown')
-              .accentPalette('red');
-  });*/
-  .controller('AppController',function($scope, $location, $log, $window){
+          .icon("menu"      ,"./img/menu.svg"                ,24)
+          .icon("back"      ,"./img/keyboard-backspace.svg"  ,24)
+          .icon("star"      ,"./img/star-outline.svg"        ,24)
+          .icon("close"     ,"./img/close.svg"               ,24)
+          .icon("dumbbell"  ,"./img/dumbbell.svg"            ,24)
+          .icon("run"       ,"./img/run.svg"                 ,24)
+          .icon("trophy"    ,"./img/trophy-variant.svg"      ,24);
+  })
+  .controller('AppController',function($scope, $location, $log, $window, $mdSidenav, $mdUtil, $mdDialog){
+  
+    $scope.setView = function(view) {
+      $scope.view = view;
+    };
+    $scope.setView('home'); // default view
+  
+    $scope.navBack = function() {
+      if( $scope.view === 'day' ) {
+        $scope.setView('week');
+      } else {
+        $scope.setView('home');
+      }
+    };
+  
+    function buildToggler(navID) {
+      var debounceFn =  $mdUtil.debounce(function(){
+            $mdSidenav(navID).toggle();
+          },200);
+      return debounceFn;
+    }
+    function closeLeft() {
+      $mdSidenav('left').close();
+    };
+    $scope.toggleLeft = buildToggler('left');
+  
+    $scope.showHome = function() {
+      $scope.setView('home');
+      closeLeft(); // Close sidenav incase open over view
+    };
   
     var startDateKey = 'gymAppStartDate';
     function getStartDateFromStorage(key) {
@@ -97,9 +116,23 @@ angular.module('gymApp', [])//, ['ngMaterial', "ngRoute"])
       setDateOnAllDays(start);
     }
     
-    $scope.showExercise = function(id) {
+    $scope.showExercise = function(id, event) {
       $scope.exercise = exercises[id];
       $scope.exerciseId = id;
+      
+      $mdDialog.show({
+        templateUrl: 'dialog.html',
+        controller: function DialogController($scope, $mdDialog) {
+            $scope.closeDialog = function() {
+                $mdDialog.hide();
+            };
+        },
+        scope: $scope,        // use parent scope in template
+        preserveScope: true,  // do not forget this if use parent scope
+        parent: angular.element(document.body),
+        targetEvent: event,
+        clickOutsideToClose: true
+      });
     }
     $scope.getExerciseImages = function(id) {
       var exercise = exercises[id];
@@ -118,12 +151,21 @@ angular.module('gymApp', [])//, ['ngMaterial', "ngRoute"])
     }
     
     $scope.showWeek = function(week) {
+      closeLeft(); // Close sidenav incase open over view
       $scope.week = week;
       $scope.day = null;
       $scope.exercise = null;
+      $scope.setView('week');
     }
     $scope.showDay = function(day) {
       $scope.day = day;
       $scope.exercise = null;
+      $scope.setView('day');
+    }
+    $scope.getDayTypeIcon = function(dayType) {
+      return dayTypes[dayType].icon;
+    }
+    $scope.getDayTypeColor = function(dayType) {
+      return dayTypes[dayType].color;
     }
   });

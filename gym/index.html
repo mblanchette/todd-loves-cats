@@ -17,54 +17,111 @@
   
   <body ng-app="gymApp" ng-controller="AppController">
 
-    <div layout="column" layout-margin="">
-      <div>
-        <div>Today is: {{currentDate | date:'fullDate'}}</div>
-        <div ng-show="today.week&&today.day">Week {{today.week}} Day {{today.day}}</div>
-        <br/>
-        <div>Week 1 began on:</div>
-        <div><input type="date" ng-model="startDate" ng-change="changeStartDate()" placeholder="yyyy-MM-dd"/></div>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-fab md-primary" aria-label="Menu or Back" ng-click="view==='day'?navBack():toggleLeft()">
+          <md-icon md-svg-icon="menu" ng-hide="view==='day'"></md-icon>
+          <md-icon md-svg-icon="back" ng-show="view==='day'"></md-icon>
+        </md-button>
+        <h2>
+          <span>Gym</span>
+        </h2>
+        <span flex=""></span>
+        <md-button class="md-icon-button" aria-label="Star">
+          <md-icon md-svg-icon="star"></md-icon>
+        </md-button>
       </div>
-      <div layout="row" layout-padding="">
-        <div flex="10">
-          <br/>
-          <div ng-repeat="week in weeks">
-            <button ng-click="showWeek(week)">Week {{week.id}}</button>
-          </div>
+    </md-toolbar>
+  
+    <section layout="row" flex="">
+    
+      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-list>
+          <md-list-item ng-click="showHome()">
+            <p>Home</p>
+            <md-divider></md-divider>
+          </md-list-item>
+          <md-list-item ng-repeat="week in weeks" ng-click="showWeek(week)">
+            <p>Week {{week.id}}</p>
+            <md-icon md-svg-icon="star" ng-show="today.week===week.id"></md-icon>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-list-item>
+        </md-list>
+      </md-sidenav>
+    
+      <md-content class="home md-padding" ng-show="view==='home'">
+        <div layout="column">
+          <md-whiteframe class="md-whiteframe-z1 home-box-width" layout-padding="" ng-show="today.week&&today.day">
+            <md-icon md-svg-icon="star"></md-icon>
+            <div>Today is: {{currentDate | date:'fullDate'}}</div>
+            <div>Week {{today.week}} Day {{today.day}}</div>
+          </md-whiteframe>
+          <md-whiteframe class="md-whiteframe-z1 home-box-width" layout-padding="" ng-show="!(today.week&&today.day)">
+            <md-icon md-svg-icon="star"></md-icon>
+            <div>Today is: {{currentDate | date:'fullDate'}}</div>
+            <div>Nothing scheduled today</div>
+          </md-whiteframe>
+          <md-whiteframe class="md-whiteframe-z1 home-box-width" layout-padding="">
+            <md-input-container>
+              <label>Week 1 began on:</label>
+              <input type="date" ng-model="startDate" ng-change="changeStartDate()" placeholder="yyyy-MM-dd"/>
+            </md-input-container>
+          </md-whiteframe>
         </div>
-        <div flex="20" g-show="week">
-          <div ng-repeat="day in week.days">
-            <h4 ng-class="{'today':(today&&today.week===week.id&&today.day===day.id)}">
-            Day {{day.id}} - {{day.date | date:'fullDate'}}</h4>
-            <div>{{day.type}}</div>
-            <div>{{day.desc}}</div>
-            <button ng-click="showDay(day)">Exercises</button>
-          </div>
+      </md-content>
+  
+      <md-content class="week md-padding" ng-show="view==='week'">
+        <div layout="column">
+        <md-whiteframe class="md-whiteframe-z1 day" layout-padding="" 
+            ng-repeat="day in week.days" class="day" ng-class="getDayTypeColor(day.type)" ng-click="showDay(day)">
+          <md-icon md-svg-icon="star" ng-show="today&&today.week===week.id&&today.day===day.id"></md-icon>
+          <h4 ng-class="{'today':(today&&today.week===week.id&&today.day===day.id)}">
+          Day {{day.id}} - {{day.date | date:'fullDate'}}</h4>
+          <div>{{day.type}}</div>
+          <md-icon md-svg-icon="{{getDayTypeIcon(day.type)}}"></md-icon>
+          <div>{{day.desc}}</div>
+        </md-whiteframe>
         </div>
-        <div flex="20" ng-show="day">
-          <div ng-repeat="exercise in day.exercises">
-            <h4>Exercise {{exercise.id}}</h4>
-            <div>{{exercise.name}}</div>
-            <div ng-show="exercise.sets">Sets: {{exercise.sets}}</div>
-            <div ng-show="exercise.reps">Reps: {{exercise.reps}}</div>
-            <div ng-show="exercise.time">Time: {{exercise.time}}</div>
-            <div ng-show="exercise.tofail">* TO FAIL</div>
-            <div>{{exercise.notes}}</div>
-            <button ng-click="showExercise(exercise.id)">Show</button>
-          </div>
+      </md-content>
+
+      <md-content class="day md-padding" ng-show="view==='day'">
+        <div ng-repeat="exercise in day.exercises">
+          <h4>Exercise {{exercise.id}}</h4>
+          <div>{{exercise.name}}</div>
+          <div ng-show="exercise.sets">Sets: {{exercise.sets}}</div>
+          <div ng-show="exercise.reps">Reps: {{exercise.reps}}</div>
+          <div ng-show="exercise.time">Time: {{exercise.time}}</div>
+          <div ng-show="exercise.tofail">* TO FAIL</div>
+          <div>{{exercise.notes}}</div>
+          <button ng-click="showExercise(exercise.id, $event)">Show</button>
         </div>
-        <div flex="50" ng-show="exercise">
-          <h2>Exercise {{exerciseId}}</h2>
-          <h3>{{exercise.name}}</h3>
-          <div>{{exercise.desc}}</div>
-          <div>{{exercise.images}}</div>
-          <div ng-repeat="image in getExerciseImages(exerciseId)">
-            <img ng-src="./img/exercises/{{image}}.jpg" />
+      </md-content>
+      
+    </section>
+    
+    <script type="text/ng-template" id="dialog.html">
+      <md-dialog>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2>Exercise {{exerciseId}}</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="closeDialog()">
+              <md-icon md-svg-icon="close" aria-label="Close"></md-icon>
+            </md-button>
           </div>
-          <button ng-click="closeExercise()">Close</button>
-        </div>
-      </div>
-    </div>
+        </md-toolbar>
+        <md-dialog-content style="max-width:800px;max-height:810px;">
+          <div>
+            <h3>{{exercise.name}}</h3>
+            <div>{{exercise.desc}}</div>
+            <div>{{exercise.images}}</div>
+            <div ng-repeat="image in getExerciseImages(exerciseId)">
+              <img ng-src="./img/exercises/{{image}}.jpg" />
+            </div>
+          </div>
+        </md-dialog-content>
+      </md-dialog>
+    </script>
     
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js"></script>
