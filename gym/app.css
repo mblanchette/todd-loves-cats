@@ -17,3 +17,6 @@
 .exercise img {
   width: 100%;
 }
+.exercise h3 {
+  margin: 0; /* avoid extra space around exercise title */
+}
