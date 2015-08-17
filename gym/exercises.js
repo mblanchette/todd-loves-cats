@@ -7,6 +7,70 @@ var dayTypes = {
 // based on javasript date getDay() for day of week, monday-friday 1-5
 var weeks = [
   {
+    id: 1, // WEEK 1
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Upper Body Push',
+        exercises: [
+          {id: 99, sets: 2, reps: '10', time: null, tofail: false, name: 'Spiderman Crawls', notes: '10 crawls forward and backward each set'},
+          {id: 40, sets: 3, reps: '10', time: null, tofail: false, name: 'Alternate DB Press (neutral grip)', notes: 'Alternate 10 presses on each arm per set'},
+          {id: 78, sets: 3, reps: '12', time: null, tofail: false, name: 'Rotational DB Shoulder Press', notes: 'Alternate 6 reps on each arm per set'},
+          {id: 69, sets: 3, reps: '12', time: null, tofail: false, name: 'Shoulder "L" Raises', notes: '6 raises forward and 6 to the side each arm each set.'},
+          {id: 36, sets: 4, reps: '10-12', time: null, tofail: false, name: 'Woodchopper Pushdowns', notes: '2 sets from high right to low left and vice versa'},
+          {id: 65, sets: 3, reps: '15', time: null, tofail: false, name: 'Rotator Cuff Tubing ER', notes: '3 sets each on right and left arm'}
+        ]
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Quick Feet',
+        exercises: [
+          {id: 121, sets: 8, reps: 'through', time: null, tofail: false, name: 'QFL Lateral Run', notes: ''},
+          {id: 118, sets: 8, reps: 'through', time: null, tofail: false, name: 'QFL In In Out Out', notes: ''},
+          {id: 119, sets: 8, reps: 'through', time: null, tofail: false, name: 'QFL Icky Shuffle', notes: ''},
+          {id: 120, sets: 8, reps: 'through', time: null, tofail: false, name: 'QFL Ali Shuffle', notes: ''}
+        ]
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Lower Body / Core',
+        exercises: [
+          {id: 1, sets: '3-4', reps: '10-12', time: null, tofail: false, name: 'Dumbbell Squat', notes: 'Use heavy enough weight to fail in 10-12 reps'},
+          {id: 62, sets:  3, reps: '12', time: null, tofail: false, name: 'Dumbbell Side Lunge', notes: 'Alternate 6 reps to right and left each set'},
+          {id: 3, sets:   3, reps: '10-12', time: null, tofail: false, name: 'DB Single Leg RDL', notes: '3 sets of 10-12 on each leg'},
+          {id: 11, sets:  4, reps: '10-12', time: null, tofail: false, name: 'Physioball High Bridges', notes: 'Keep your feet flat on the top of the physioball'},
+          {id: 108, sets: 2, reps: '/', time: null, tofail: true, name: 'Starfish Crunch', notes: 'Do as many reps as you can to failure'},
+          {id: 105, sets: 2, reps: '/', time: null, tofail: true, name: 'Heels to the Heavens', notes: 'Do as many reps as you can to failure'}
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'SPR-Interval Intensity',
+        exercises: [
+          {id: null, sets: null, reps: null, time: '5min', tofail: false, name: 'Warmup jog', notes: ''},
+          {id: null, sets: null, reps: null, time: '10min', tofail: false, name: 'Interval sprint/jog', notes: '20 second all out sprint / 40 second jog'},
+          {id: null, sets: null, reps: null, time: '5min', tofail: false, name: 'Cooldown jog', notes: ''}
+        ]
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Upper Body Pull / Core',
+        exercises: [
+          {id: 19, sets: 4, reps: '12', time: null, tofail: false, name: 'Inverted Row', notes: 'Can do either with knees bent or straight for more challenge'},
+          {id: 5, sets:  3, reps: '10-12', time: null, tofail: false, name: 'Underhand Pulldowns', notes: 'Drape tubing over high bar if no pulldown machine available'},
+          {id: 41, sets: 3, reps: '12', time: null, tofail: false, name: 'Reverse Lunge Curls', notes: '6 reps stepping back with right and 6 on left each set'},
+          {id: 9, sets:  3, reps: '10-12', time: null, tofail: false, name: 'DB Hammer Curls', notes: 'Slowly control the lowering of the dumbbells'},
+          {id: 110, sets: 4, reps: '/', time: null, tofail: true, name: 'V-Up Russian Twists', notes: '4 sets to failure. Minimize rest between sets to 30 seconds.'}
+        ]
+      }
+    ]
+  }, 
+  {
     id: 2, // WEEK 2
     days: [
       {
@@ -14,7 +78,11 @@ var weeks = [
         type: dayTypes.STRENGTH_TRAINING.code,
         desc: 'Upper Body Push',
         exercises: [
-          {id: 25, sets: 3, reps: '12-15', time: null, tofail: false, name: 'Physioball Push Up Plus', notes: 'Place the ball closer to your feet for more challenge'}
+          {id: 25, sets: 3, reps: '12-15', time: null, tofail: false, name: 'Physioball Push Up Plus', notes: 'Place the ball closer to your feet for more challenge'},
+          {id: 33, sets: 4, reps: '12', time: null, tofail: false, name: 'Cable Rotational Push Press', notes: '2 sets with right arm and 2 sets with left arm'},
+          {id: 64, sets: 3, reps: '10-12', time: null, tofail: false, name: 'Side Laterals', notes: 'Keep slight bend in your elbows throughout'},
+          {id: 72, sets: 3, reps: '10-12', time: null, tofail: false, name: 'Standing DB Row and Kickback', notes: 'Keep your lower back flat for support'},
+          {id: 15, sets: 3, reps: '12', time: null, tofail: false, name: 'Cable/Tubing Tricep Push Aways', notes: 'Use fairly thick tubing if you don’t have cable column'}
         ]
       },
       {
@@ -23,6 +91,10 @@ var weeks = [
         desc: 'Crunches and Punches Circuit',
         exercises: [
           {id: 110, sets: 1, reps: '/', time: null, tofail: true, name: 'V-Up Russian Twist', notes: ''},
+          {id: null, sets: 1, reps: null, time: '3min', tofail: true, name: 'Nonstop shadow/heavybag boxing', notes: ''},
+          {id: 106, sets: 1, reps: '/', time: null, tofail: true, name: 'Ball Passes', notes: ''},
+          {id: null, sets: 1, reps: null, time: '3min', tofail: true, name: 'Nonstop shadow/heavybag boxing', notes: ''},
+          {id: 105, sets: 1, reps: '/', time: null, tofail: true, name: 'Heels to the Heavens', notes: ''},
           {id: null, sets: 1, reps: null, time: '3min', tofail: true, name: 'Nonstop shadow/heavybag boxing', notes: ''}
         ]
       },
@@ -59,6 +131,131 @@ var weeks = [
           {id: 82, sets: 4, reps: '10-12', time: null, tofail: false, name: 'DB Fielder Curls', notes: 'Maintain your solid lower back positioning '},
           {id: 32, sets: 3, reps: '15', time: null, tofail: false, name: 'Physioball Reverse Hyperext.', notes: 'Lift legs by contracting glutes and lower back'},
           {id: 108, sets: 3, reps: '/', time: null, tofail: true, name: 'Starfish Crunches', notes: 'Perform 3 sets to failure resting < 30 seconds between'}
+        ]
+      }
+    ]
+  }, 
+  {
+    id: 3, // WEEK 3
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Upper Body Push',
+        exercises: [
+          {id: 81, sets: 3, reps: '8P', time: null, tofail: false, name: 'Burpee Push Up Pyramid', notes: '8,7,6,5,4,3,2,1 reps with burpees in between'},
+          {id: 33, sets: 4, reps: '12', time: null, tofail: false, name: 'Cable/Tubing Rotational Chest Press', notes: '2 sets each with the right and left arm'},
+          {id: 70, sets: 3, reps: '10-12', time: null, tofail: false, name: 'Plate Squeeze Stances', notes: 'Use 5-10 lb plates for this exercise'},
+          {id: 94, sets: 3, reps: '10', time: null, tofail: false, name: 'Eccentric Triceps (The Big Catch)', notes: 'Wrap thick tubing around middle of foot for this'},
+          {id: 65, sets: 3, reps: '15', time: null, tofail: false, name: 'Rotator Cuff Tubing ER', notes: '3 sets each on right and left arm'}
+        ]
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'The CONE ZONE Workout',
+        exercises: [
+          {id: 129, sets: null, reps: '5', time: null, tofail: false, name: 'Cone Drill - 5-10-5 right and left', notes: ''},
+          {id: 126, sets: null, reps: '5', time: null, tofail: false, name: 'Cone Drill – Star Drill', notes: ''},
+          {id: 127, sets: null, reps: '5', time: null, tofail: false, name: 'Cone Drill – 4 Corners', notes: ''},
+          {id: 128, sets: null, reps: '5', time: null, tofail: false, name: 'Cone Drill – Agility Wheel', notes: ''}
+        ]
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Lower Body / Core',
+        exercises: [
+          {id: 73, sets: 3, reps: '7', time: null, tofail: false, name: '3 Way Lunge Reach', notes: 'Do 1 set of 7 for straight, side, and pivot lunges in a row without rest. Do other leg. Perform 3 sets'},
+          {id: 77, sets: 3, reps: null, time: '45sec', tofail: false, name: 'Skier (Skater) Hops', notes: 'Land softly into squat position and explode out!'},
+          {id: 86, sets: 3, reps: '10-12', time: null, tofail: false, name: 'Crossover Step Ups', notes: '3 sets of 10-12 on each leg'},
+          {id: 4,  sets: 3, reps: '10', time: null, tofail: false, name: 'Hip Miniband Forw/Back Walk', notes: 'Walk 10 steps forward and then backward each '},
+          {id: 109, sets: 3, reps: '/', time: null, tofail: true, name: 'Windshield Wipers', notes: 'Perform 3 sets to failure'}
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Sprint',
+        exercises: [
+          {id: 141, sets: null, reps: '6', time: null, tofail: false, name: 'Sprint/Walk/Jog', notes: ''},
+          {id: 138, sets: null, reps: '6', time: null, tofail: false, name: 'Full Gassers', notes: ''},
+          {id: 136, sets: null, reps: '4', time: null, tofail: false, name: 'Half Gassers', notes: ''},
+          {id: 137, sets: null, reps: '4', time: null, tofail: false, name: '30 Yard Jumps', notes: ''}
+        ]
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Upper Body Pull / Core',
+        exercises: [
+          {id: 76, sets: 3, reps: '/', time: null, tofail: true, name: 'Pull Ups', notes: 'Perform 3 sets to positive and negative failure'},
+          {id: 63, sets: 3, reps: '10-12', time: null, tofail: false, name: 'Standing Barbell Row', notes: 'Make sure to keep your lower back arched and supported'},
+          {id: 26, sets: 4, reps: '12', time: null, tofail: false, name: 'Rotational High Row', notes: 'Do 2 sets each with the right and left arms'},
+          {id: 79, sets: 4, reps: '10-12', time: null, tofail: false, name: 'Incline DB Curls', notes: 'Be sure to get a full stretch on the biceps at the bottom of the rep'},
+          {id: 111, sets: 3, reps: '/', time: null, tofail: true, name: 'ISO Crunches', notes: 'Perform 3 sets to failure'}
+        ]
+      }
+    ]
+  },
+  {
+    id: 4, // WEEK 4
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.CHALLENGE.code,
+        desc: 'Challenge I',
+        exercises: [
+          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Pushups', notes: ''},
+          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Inverted Pull Ups', notes: ''},
+          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Bodyweight Squats', notes: ''},
+          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Full Sit Ups', notes: ''}
+        ]
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Core',
+        exercises: [
+          {id: 103, sets: 2, reps: '12', time: null, tofail: false, name: 'Rollups', notes: 'Lower yourself down very slowly'},
+          {id: 105, sets: 2, reps: '15', time: null, tofail: false, name: 'Heels to the Heavens', notes: 'Clear your whole tailbone off the mat'},
+          {id: 106, sets: 2, reps: '12', time: null, tofail: false, name: 'Ball Pass', notes: '6 passes each to the legs and arms'},
+          {id: 104, sets: 2, reps: '15', time: null, tofail: false, name: 'Jackknifes', notes: '15 reps with right leg high and 15 with the left leg high each set. No rest in between'},
+          {id: 32,  sets: 2, reps: '10', time: null, tofail: false, name: 'Physioball Reverse Hyperext.', notes: 'Keep your feet together and squeeze glutes / lower back to lift'}
+        ]
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Jumping',
+        exercises: [
+          {id: 130, sets: null, reps: '50', time: null, tofail: false, name: 'Jump Rope – Two Foot Hops', notes: '50 jumps'},
+          {id: 132, sets: null, reps: '50', time: null, tofail: false, name: 'Jump Rope – Side to Side Hops (2 Feet)', notes: ''},
+          {id: 131, sets: null, reps: '50', time: null, tofail: false, name: 'Jump Rope – Single Leg Jumps', notes: '50 jumps each'},
+          {id: 133, sets: null, reps: '50', time: null, tofail: false, name: 'Jump Rope – Side to Side Hops (1 Foot)', notes: ''},
+          {id: 132, sets: null, reps: '50', time: null, tofail: false, name: 'Jump Rope – Side to Side Hops (2 Feet)', notes: ''},
+          {id: 130, sets: null, reps: '50', time: null, tofail: false, name: 'Jump Rope – Two Foot Hops', notes: '50 jumps'}
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Core',
+        exercises: [
+          {id: 107, sets: 3, reps: '30', time: null, tofail: false, name: 'Plank Straight Leg March', notes: 'Alternate 15 reps on each leg per set'},
+          {id: 112, sets: 2, reps: '30', time: null, tofail: false, name: 'Plank Opposite Knee to Elbow', notes: '15 reps right elbow to left knee and 15 reps left elbow to right knee each set'},
+          {id: 116, sets: 2, reps: '15', time: null, tofail: false, name: 'Plank Same Side Knee to Elbow', notes: 'Right elbow to right knee 15 times and left elbow to left knee 15 times two sets each'}
+        ]
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.CHALLENGE.code,
+        desc: 'Challenge Retest',
+        exercises: [
+          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Pushups', notes: ''},
+          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Inverted Pull Ups', notes: ''},
+          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Bodyweight Squats', notes: ''},
+          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Full Sit Ups', notes: ''}
         ]
       }
     ]
@@ -532,7 +729,7 @@ var exercises = {
     images: 2
   },
   94: {
-    name:'The "Big Catch',
+    name:'The "Big Catch"',
     desc:'Start by lying on your back on the floor with one end of a jump stretch band around the soles of both feet and the other end held in the throwing hand.  Begin by bending both knees towards the chest and positioning the throwing arm with the elbow bent 90 degrees and the wrist extended back.  Arm should be in a "triceps pushdown" like position.  Next, explosively extend both knees out and eccentrically control the extending of the elbow and flexion of the wrist by taking 2-3 seconds to complete the motion.  Immediately perform the next repetition by bending the knees up again and repositioning the elbow as described earlier.  Repeat for 12 reps.',
     images: 2
   },
