@@ -851,42 +851,42 @@ var exercises = {
   118: {
     name:'In In Out Out',
     desc:'· Start facing the side of the ladder in front of the first box. · Begin by stepping in with the left foot, then in with the right foot. · Step outside the second box with the left foot followed by the right foot. · Continue working your way down the ladder in this alternating "In In Out Out" footwork pattern. 1  4 3  2  5  8  7  6  9  12  11  10  13  16  15  14  1  4 3  2  5  8  7  6  9  12  11  10  13  16  15  14',
-    images: 0
+    images: 1
   },
   119: {
     name:'Icky Shuffle',
     desc:'· Start by facing down ladder and to the side.  · Using a 1-2-3 rhythm, step in first square with the inside foot, then the outside foot.  · Step to the outside of the second square with the lead foot.  · Step into the second square with the trail foot.  · Step with the lead foot into square two.  · Repeat the exercise leading with the other foot.',
-    images: 0
+    images: 1
   },
   120: {
     name:'Ali Shuffle',
     desc:'· Begin by putting your left foot into the first box and your right foot on the outside of the first box. · Simultaneously scissor hop and place your right foot into the first box while you progress down the ladder by putting your left foot outside the second box. · Scissor again, this time putting your right foot on the outside of the second box and your left foot inside it. · Continue this pattern to the end of the ladder.  You should look like Ali doing his thing.  2  1  5  4  8  7 3  2  1  5  4  6  9  8  7 3  6  9 1  1 2  2  3  3  4  4  5  5  6  6  7  7  8  8  1  1 2  2  3  3  4  4  5  5  6  6  7  7  8  8',
-    images: 0
+    images: 1
   },
   121: {
     name:'Lateral Run (2 Feet in)',
     desc:'· Start facing laterally in front of the ladder. · Place your left foot into the first box followed by your right foot. · Continue this pattern of two feet in each box as you rapidly progress down the ladder. Line Drills',
-    images: 0
+    images: 1
   },
   122: {
     name:'Cross Over',
     desc:'· Stand straddling a line that is either painted in the grass or created with a strip of tape on a firm surface, with your left foot over and in front of your right. · Begin by jumping straight up in the air, enough to clear your feet and quickly cross them landing softly on the balls of your feet with your right now over and in front of your left. · Continue this quick switch jump for 30 seconds. 2 2 1 1 1  2 3  4  5  6  7  8  1  2 3  4  5  6  7  8',
-    images: 0
+    images: 1
   },
   123: {
     name:'Two Foot Figure 8',
     desc:'· Create a "line box" in either the grass (with paint) or on a firm surface with tape and stand in the lower right hand box with both feet close together. · Start by quickly hopping both feet diagonally into the upper left hand box. · Quickly jump to your right into the box on the upper right. · Finish by jumping diagonally backward into the box in the lower left hand corner. · Jump back to the starting box and repeat for the 30 seconds.',
-    images: 0
+    images: 1
   },
   124: {
     name:'X Jump and Turn',
     desc:'· Create a "line box" in the grass with spray paint or on a firm surface using tape and begin by straddling the midline so that your right foot is in the lower right hand box and your left foot is in the lower left hand box. · Quickly jump and land at the center of the box (where the two lines intersect) and bring your feet closer together (so that each one is just to the outside of the midline. · Next, jump forward and again spread the feet out and land with your right foot in the upper right hand box and the left foot in the upper left hand box. · From here, rapidly jump and turn your body 180 degrees so that you land in the same two boxes, but this time you are facing in the opposite direction. · Proceed to jump back to the starting position in this "hopscotch" manner for 30 sec. 3 3 2 2 1 1 6 6 5 5 4 4 3 3 2 2 4 4 1 1 3 3 2 2 4 4 1 1',
-    images: 0
+    images: 1
   },
   125: {
     name:'Side to Side Line Hop (Two feet and Right / Left Solo)',
     desc:'· Stand with both feet on one side of a line that is either painted in the grass or created with a strip of tape on a firm surface.  This drill can alternately be done on one leg (as shown in the two pictures on the right above). · Quickly, and without much height, jump laterally to the other side of the line, landing softly on the balls of your feet. · Continue rapidly jumping side to side for 30 seconds.  Cone Drills',
-    images: 0
+    images: 1
   },
   126: {
     name:'Star Drill',
