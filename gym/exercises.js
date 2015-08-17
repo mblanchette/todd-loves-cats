@@ -845,12 +845,12 @@ var exercises = {
   },
   117: {
     name:'Physioball Around the World',
-    desc:'The Physioball Around the World is a great core power and stability exercise…and it happens to be another extremely difficult one, that also begs for some upper body strength as well in order to complete it.  To perform the exercise, position your body on top of a physioball with your shins or toes on top of the ball (the further towards your toes the ball is, the harder the exercise is).  Begin by tucking the knees in the direction of the chest, but instead of coming directly straight in, rotate the ball in a circular direction.  You should be drawing big circles on the ground with the ball.  Do half of your reps in one set in the clockwise position and the other half moving your legs counterclockwise. AGILITY DRILLS Quick Foot Ladder  (Credit University of Washington Sports for pictures of footwork)',
+    desc:'The Physioball Around the World is a great core power and stability exercise…and it happens to be another extremely difficult one, that also begs for some upper body strength as well in order to complete it.  To perform the exercise, position your body on top of a physioball with your shins or toes on top of the ball (the further towards your toes the ball is, the harder the exercise is).  Begin by tucking the knees in the direction of the chest, but instead of coming directly straight in, rotate the ball in a circular direction.  You should be drawing big circles on the ground with the ball.  Do half of your reps in one set in the clockwise position and the other half moving your legs counterclockwise.',
     images: 3
   },
   118: {
     name:'In In Out Out',
-    desc:'· Start facing the side of the ladder in front of the first box. · Begin by stepping in with the left foot, then in with the right foot. · Step outside the second box with the left foot followed by the right foot. · Continue working your way down the ladder in this alternating "In In Out Out" footwork pattern. 1  4 3  2  5  8  7  6  9  12  11  10  13  16  15  14  1  4 3  2  5  8  7  6  9  12  11  10  13  16  15  14',
+    desc:'· Start facing the side of the ladder in front of the first box. · Begin by stepping in with the left foot, then in with the right foot. · Step outside the second box with the left foot followed by the right foot. · Continue working your way down the ladder in this alternating "In In Out Out" footwork pattern.',
     images: 1
   },
   119: {
@@ -860,17 +860,17 @@ var exercises = {
   },
   120: {
     name:'Ali Shuffle',
-    desc:'· Begin by putting your left foot into the first box and your right foot on the outside of the first box. · Simultaneously scissor hop and place your right foot into the first box while you progress down the ladder by putting your left foot outside the second box. · Scissor again, this time putting your right foot on the outside of the second box and your left foot inside it. · Continue this pattern to the end of the ladder.  You should look like Ali doing his thing.  2  1  5  4  8  7 3  2  1  5  4  6  9  8  7 3  6  9 1  1 2  2  3  3  4  4  5  5  6  6  7  7  8  8  1  1 2  2  3  3  4  4  5  5  6  6  7  7  8  8',
+    desc:'· Begin by putting your left foot into the first box and your right foot on the outside of the first box. · Simultaneously scissor hop and place your right foot into the first box while you progress down the ladder by putting your left foot outside the second box. · Scissor again, this time putting your right foot on the outside of the second box and your left foot inside it. · Continue this pattern to the end of the ladder.  You should look like Ali doing his thing.',
     images: 1
   },
   121: {
     name:'Lateral Run (2 Feet in)',
-    desc:'· Start facing laterally in front of the ladder. · Place your left foot into the first box followed by your right foot. · Continue this pattern of two feet in each box as you rapidly progress down the ladder. Line Drills',
+    desc:'· Start facing laterally in front of the ladder. · Place your left foot into the first box followed by your right foot. · Continue this pattern of two feet in each box as you rapidly progress down the ladder.',
     images: 1
   },
   122: {
     name:'Cross Over',
-    desc:'· Stand straddling a line that is either painted in the grass or created with a strip of tape on a firm surface, with your left foot over and in front of your right. · Begin by jumping straight up in the air, enough to clear your feet and quickly cross them landing softly on the balls of your feet with your right now over and in front of your left. · Continue this quick switch jump for 30 seconds. 2 2 1 1 1  2 3  4  5  6  7  8  1  2 3  4  5  6  7  8',
+    desc:'· Stand straddling a line that is either painted in the grass or created with a strip of tape on a firm surface, with your left foot over and in front of your right. · Begin by jumping straight up in the air, enough to clear your feet and quickly cross them landing softly on the balls of your feet with your right now over and in front of your left. · Continue this quick switch jump for 30 seconds.',
     images: 1
   },
   123: {
@@ -880,17 +880,17 @@ var exercises = {
   },
   124: {
     name:'X Jump and Turn',
-    desc:'· Create a "line box" in the grass with spray paint or on a firm surface using tape and begin by straddling the midline so that your right foot is in the lower right hand box and your left foot is in the lower left hand box. · Quickly jump and land at the center of the box (where the two lines intersect) and bring your feet closer together (so that each one is just to the outside of the midline. · Next, jump forward and again spread the feet out and land with your right foot in the upper right hand box and the left foot in the upper left hand box. · From here, rapidly jump and turn your body 180 degrees so that you land in the same two boxes, but this time you are facing in the opposite direction. · Proceed to jump back to the starting position in this "hopscotch" manner for 30 sec. 3 3 2 2 1 1 6 6 5 5 4 4 3 3 2 2 4 4 1 1 3 3 2 2 4 4 1 1',
+    desc:'· Create a "line box" in the grass with spray paint or on a firm surface using tape and begin by straddling the midline so that your right foot is in the lower right hand box and your left foot is in the lower left hand box. · Quickly jump and land at the center of the box (where the two lines intersect) and bring your feet closer together (so that each one is just to the outside of the midline. · Next, jump forward and again spread the feet out and land with your right foot in the upper right hand box and the left foot in the upper left hand box. · From here, rapidly jump and turn your body 180 degrees so that you land in the same two boxes, but this time you are facing in the opposite direction. · Proceed to jump back to the starting position in this "hopscotch" manner for 30 sec.',
     images: 1
   },
   125: {
     name:'Side to Side Line Hop (Two feet and Right / Left Solo)',
-    desc:'· Stand with both feet on one side of a line that is either painted in the grass or created with a strip of tape on a firm surface.  This drill can alternately be done on one leg (as shown in the two pictures on the right above). · Quickly, and without much height, jump laterally to the other side of the line, landing softly on the balls of your feet. · Continue rapidly jumping side to side for 30 seconds.  Cone Drills',
+    desc:'· Stand with both feet on one side of a line that is either painted in the grass or created with a strip of tape on a firm surface.  This drill can alternately be done on one leg (as shown in the two pictures on the right above). · Quickly, and without much height, jump laterally to the other side of the line, landing softly on the balls of your feet. · Continue rapidly jumping side to side for 30 seconds.',
     images: 1
   },
   126: {
     name:'Star Drill',
-    desc:'· Set up 8 cones in a half-star pattern 5-7 yards apart.  · Start in an athletic position with head and shoulders up and knees slightly bent at cone 1.  · Sprint to cone 2, touch the cone with your hand, and sprint back to cone 1.  · Sprint to cone 3, touch the cone with your hand, and sprint back to 3.  · Continue this pattern until you have touched every cone.  Reps: 4-10 / Rest: 1 minute Variations: You can vary this drill by performing different agility skills in each leg of the drill, by altering the distance of the cones, or by changing the order of the skills. 2 1 2 1 2 2 1 1',
+    desc:'· Set up 8 cones in a half-star pattern 5-7 yards apart.  · Start in an athletic position with head and shoulders up and knees slightly bent at cone 1.  · Sprint to cone 2, touch the cone with your hand, and sprint back to cone 1.  · Sprint to cone 3, touch the cone with your hand, and sprint back to 3.  · Continue this pattern until you have touched every cone.  Reps: 4-10 / Rest: 1 minute Variations: You can vary this drill by performing different agility skills in each leg of the drill, by altering the distance of the cones, or by changing the order of the skills.',
     images: 1
   },
   127: {
@@ -905,7 +905,7 @@ var exercises = {
   },
   129: {
     name:'Pro Agility Drill (5-10-5)',
-    desc:'· This is the same 5-10-5 drill that you did previously during the field testing portion of the manual.  This drill is an excellent drill for developing acceleration / deceleration and foot quickness and is extremely productive drill for both infielders looking to improve their ability to drop their center of gravity to field ground balls or for pitchers looking to get better at fielding bunts). · Start in a 2-point stance straddling the starting line.  · Open to your right or left; sprint 5 yards; touch the line with your hand.  · Turn and sprint 10 yards and touch the line with your hand.  · Turn and sprint 5 yards through the finish line. Reps: 4-10 / Rest: 1 minute Variations:  This drill can be varied by either changing the distance between the lines or the direction in which you start (i.e. first step to the right or to the left).  JUMP ROPE DRILLS',
+    desc:'· This is the same 5-10-5 drill that you did previously during the field testing portion of the manual.  This drill is an excellent drill for developing acceleration / deceleration and foot quickness and is extremely productive drill for both infielders looking to improve their ability to drop their center of gravity to field ground balls or for pitchers looking to get better at fielding bunts). · Start in a 2-point stance straddling the starting line.  · Open to your right or left; sprint 5 yards; touch the line with your hand.  · Turn and sprint 10 yards and touch the line with your hand.  · Turn and sprint 5 yards through the finish line. Reps: 4-10 / Rest: 1 minute Variations:  This drill can be varied by either changing the distance between the lines or the direction in which you start (i.e. first step to the right or to the left).',
     images: 1
   },
   130: {
@@ -935,12 +935,12 @@ var exercises = {
   },
   135: {
     name:'Jump Rope – Single Single Double',
-    desc:'Bring some power to your rope jumping by doing this exercise.  Start by getting into a rhythm with a normal two foot hop.  Once you feel like you\'re ready to start, perform two consecutive single jumps followed by an explosive double jump.  The double jump requires you to jump higher than usual and try to clear the rope twice on one jump.  If successful, immediately repeat the pattern, continuing with two single jumps and a double. RUNNING 136',
+    desc:'Bring some power to your rope jumping by doing this exercise.  Start by getting into a rhythm with a normal two foot hop.  Once you feel like you\'re ready to start, perform two consecutive single jumps followed by an explosive double jump.  The double jump requires you to jump higher than usual and try to clear the rope twice on one jump.  If successful, immediately repeat the pattern, continuing with two single jumps and a double.',
     images: 0
   },
   136: {
     name:'Half Gassers',
-    desc:'Place two cones in a straight line 30 yards apart.  While holding a stopwatch to time yourself, sprint from the first cone to the second.  When you reach the second cone, turn and change direction sprinting back to the first cone.  Try to complete the round trip in about 8-10 seconds.  Regardless of how long it takes you to complete the trip, you have the remainder of the 30 seconds (approximately 20 seconds) to rest until you have to perform your next rep.  Continue in this manner, completing the run and then getting your rest, all within 30 seconds. 137',
+    desc:'Place two cones in a straight line 30 yards apart.  While holding a stopwatch to time yourself, sprint from the first cone to the second.  When you reach the second cone, turn and change direction sprinting back to the first cone.  Try to complete the round trip in about 8-10 seconds.  Regardless of how long it takes you to complete the trip, you have the remainder of the 30 seconds (approximately 20 seconds) to rest until you have to perform your next rep.  Continue in this manner, completing the run and then getting your rest, all within 30 seconds.',
     images: 0
   },
   137: {
@@ -960,7 +960,7 @@ var exercises = {
   },
   140: {
     name:'60 Yard S-Runs',
-    desc:'Place two cones 60 yards apart.  Sprint from the first cone to the second, while incorporating S-turns into the run.  The difficulty of the run is increased by tightening up the turns and completing more within the 60 yards.  Change of direction skills and agility are stressed more when the turns are kept tight and frequent.  Regardless of how you perform the run, walk back to the first cone after each run.  This will serve as your rest period.  Turn and sprint upon return to the first cone and repeat for the prescribed number of reps.  141',
+    desc:'Place two cones 60 yards apart.  Sprint from the first cone to the second, while incorporating S-turns into the run.  The difficulty of the run is increased by tightening up the turns and completing more within the 60 yards.  Change of direction skills and agility are stressed more when the turns are kept tight and frequent.  Regardless of how you perform the run, walk back to the first cone after each run.  This will serve as your rest period.  Turn and sprint upon return to the first cone and repeat for the prescribed number of reps.',
     images: 0
   },
   141: {
