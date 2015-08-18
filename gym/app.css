@@ -14,6 +14,17 @@
 .day.red, md-list-item.day.red button.md-button:not([disabled]):hover {
   background: #ff8a80; 
 }
+.day-list md-list-item {
+  background-color: white; /* avoid day bg color being applied to list */
+}
+.content-title {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+}
+.content-title h2, .content-title h3, .content-title h4 {
+  margin: 0px;
+}
 .exercise img {
   width: 100%;
 }

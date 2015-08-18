@@ -116,10 +116,36 @@ angular.module('gymApp', ['ngMaterial'])
       setDateOnAllDays(start);
     }
     
+    function setDesriptionLines(exercise) {
+      if( exercise.desc.indexOf('·') != -1 && !exercise.descLines ) {
+        var lines;
+        if( exercise.desc.indexOf('Reps:') != -1 ) {
+          bullets = exercise.desc.substring(0, exercise.desc.indexOf('Reps:'));
+          lines = bullets.split('·');
+          
+          var notes = exercise.desc.substring(exercise.desc.indexOf('Reps:'));
+          if( notes.indexOf('Variations:') != -1 ) {
+            var notes1 = notes.substring(0, notes.indexOf('Variations:'));
+            var notes2 = notes.substring(notes.indexOf('Variations:'));
+            lines.push(notes1);
+            lines.push(notes2);
+          } else {
+            lines.push(notes);
+          }
+        } else {
+          lines = exercise.desc.split('·');
+        }
+        if( lines[0].length === 0 ) {
+          lines.splice(0, 1); // remove expected first empty section from first bullet
+        }
+        exercise.descLines = lines;
+      }
+    }
     $scope.showExercise = function(id, event) {
       $scope.exercise = exercises[id];
       if( !$scope.exercise ) return;
       $scope.exerciseId = id;
+      setDesriptionLines($scope.exercise);
       
       $mdDialog.show({
         templateUrl: 'dialog.html',
@@ -135,6 +161,7 @@ angular.module('gymApp', ['ngMaterial'])
         clickOutsideToClose: true
       });
     }
+
     $scope.getExerciseImages = function(id) {
       var exercise = exercises[id];
       var images = [];

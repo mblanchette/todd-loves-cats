@@ -72,6 +72,9 @@
       </md-content>
   
       <md-content class="week md-padding" ng-if="view==='week'">
+        <div class="content-title">
+          <h2>Week {{week.id}}</h2>
+        </div>
         <md-list>
           <md-list-item ng-repeat="day in week.days" class="day md-3-line" ng-class="getDayTypeColor(day.type)" ng-click="showDay(day)">
             <div class="md-list-item-text">
@@ -87,8 +90,16 @@
         </md-list>
       </md-content>
 
-      <md-content class="day md-padding" ng-if="view==='day'">
-        <md-list>
+      <md-content class="day md-padding" ng-if="view==='day'" ng-class="getDayTypeColor(day.type)">
+        <div layout="row">
+          <div class="md-padding content-title" flex="">
+            <h2>Week {{week.id}} Day {{day.id}}<h2>
+            <h3>{{day.date | date:'fullDate'}}</h3>
+            <h4>{{day.desc}}</h4>
+          </div>
+          <md-icon md-svg-icon="{{getDayTypeIcon(day.type)}}"></md-icon>
+        </div>
+        <md-list class="day-list">
           <md-list-item ng-repeat="exercise in day.exercises" class="md-3-line" ng-click="showExercise(exercise.id, $event)">
             <div class="md-list-item-text">
               <h3><span>{{exercise.name}}</span> <span ng-show="exercise.id">({{exercise.id}})</span></h3>
@@ -121,7 +132,12 @@
         <md-dialog-content style="max-width:800px;max-height:810px;">
           <div class="exercise">
             <h3>{{exercise.name}}</h3>
-            <p>{{exercise.desc}}</p>
+            <p data-ng-if="!exercise.descLines">{{exercise.desc}}</p>
+            <p data-ng-if="exercise.descLines">
+              <ul>
+                <li ng-repeat="line in exercise.descLines">{{line}}</li>
+              </ul>
+            </p>
             <div ng-repeat="image in getExerciseImages(exerciseId)">
               <img ng-src="./img/exercises/{{image}}.jpg" />
             </div>
