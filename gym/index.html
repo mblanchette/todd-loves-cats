@@ -49,17 +49,17 @@
         </md-list>
       </md-sidenav>
     
-      <md-content class="home md-padding" ng-if="view==='home'">
+      <md-content class="home md-padding content-view" ng-if="view==='home'" flex="">
         <div layout="column">
           <md-whiteframe class="md-whiteframe-z1 home-box-width day" layout-padding="" ng-if="today.week&&today.day"
               ng-click="showToday()" ng-class="getDayTypeColor(today.day.type)">
             <md-icon md-svg-icon="star"></md-icon>
-            <div>Today is: {{currentDate | date:'fullDate'}}</div>
+            <div>Today is: {{currentDate | date:'EEE, MMM d'}}</div>
             <div>Week {{today.week.id}} Day {{today.day.id}}</div>
           </md-whiteframe>
           <md-whiteframe class="md-whiteframe-z1 home-box-width" layout-padding="" ng-if="!(today.week&&today.day)">
             <md-icon md-svg-icon="star"></md-icon>
-            <div>Today is: {{currentDate | date:'fullDate'}}</div>
+            <div>Today is: {{currentDate | date:'EEE, MMM d'}}</div>
             <div>Nothing scheduled today</div>
           </md-whiteframe>
           <md-whiteframe class="md-whiteframe-z1 home-box-width" layout-padding="">
@@ -71,7 +71,7 @@
         </div>
       </md-content>
   
-      <md-content class="week md-padding" ng-if="view==='week'">
+      <md-content class="week md-padding content-view" ng-if="view==='week'" flex="">
         <div class="content-title">
           <h2>Week {{week.id}}</h2>
         </div>
@@ -80,7 +80,7 @@
             <div class="md-list-item-text">
               <md-icon md-svg-icon="star" ng-show="today.week.id===week.id&&today.day.id===day.id"></md-icon>
               <h3 ng-class="{'today':(today.week.id===week.id&&today.day.id===day.id)}">
-              Day {{day.id}} - {{day.date | date:'fullDate'}}</h3>
+              Day {{day.id}} - {{day.date | date:'EEE, MMM d'}}</h3>
               <h4>{{getDayTypeName(day.type)}}</h4>
               <p>{{day.desc}}</p>
             </div>
@@ -90,11 +90,11 @@
         </md-list>
       </md-content>
 
-      <md-content class="day md-padding" ng-if="view==='day'" ng-class="getDayTypeColor(day.type)">
+      <md-content class="day md-padding content-view" ng-if="view==='day'" ng-class="getDayTypeColor(day.type)" flex="">
         <div layout="row">
           <div class="md-padding content-title" flex="">
             <h2>Week {{week.id}} Day {{day.id}}<h2>
-            <h3>{{day.date | date:'fullDate'}}</h3>
+            <h3>{{day.date | date:'EEE, MMM d'}}</h3>
             <h4>{{day.desc}}</h4>
           </div>
           <md-icon md-svg-icon="{{getDayTypeIcon(day.type)}}"></md-icon>

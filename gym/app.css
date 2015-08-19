@@ -25,6 +25,9 @@
 .content-title h2, .content-title h3, .content-title h4 {
   margin: 0px;
 }
+.content-view {
+  max-width: 550px
+}
 .exercise img {
   width: 100%;
 }
