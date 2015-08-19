@@ -280,8 +280,8 @@ var exercises = {
   },
   4: {
     name:'Hip Miniband Series',
-    desc:'The Hip Miniband Series is detailed in the earlier section of the manual.  Refer to this section for pictures and descriptions of each exercise.',
-    images: 2
+    desc:'The Hip Miniband Series includes 5 exercises: Forward walk, Backward walk, Side step, Carioca, and Monster walk. Perform when scripted in Lower Body workouts.',
+    images: 7
   },
   5: {
     name:'Underhand Pulldowns',
