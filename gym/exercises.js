@@ -179,8 +179,8 @@ var weeks = [
         desc: 'Sprint',
         exercises: [
           {id: 141, sets: null, reps: '6', time: null, tofail: false, name: 'Sprint/Walk/Jog', notes: ''},
-          {id: 138, sets: null, reps: '6', time: '1min', tofail: false, name: 'Full Gassers', notes: ''},
-          {id: 136, sets: null, reps: '4', time: '30sec', tofail: false, name: 'Half Gassers', notes: ''},
+          {id: 138, sets: 6, reps: null, time: '1min', tofail: false, name: 'Full Gassers', notes: ''},
+          {id: 136, sets: 4, reps: null, time: '30sec', tofail: false, name: 'Half Gassers', notes: ''},
           {id: 137, sets: null, reps: '4', time: null, tofail: false, name: '30 Yard Jumps', notes: ''}
         ]
       },
