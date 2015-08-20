@@ -179,8 +179,8 @@ var weeks = [
         desc: 'Sprint',
         exercises: [
           {id: 141, sets: null, reps: '6', time: null, tofail: false, name: 'Sprint/Walk/Jog', notes: ''},
-          {id: 138, sets: null, reps: '6', time: null, tofail: false, name: 'Full Gassers', notes: ''},
-          {id: 136, sets: null, reps: '4', time: null, tofail: false, name: 'Half Gassers', notes: ''},
+          {id: 138, sets: null, reps: '6', time: '1min', tofail: false, name: 'Full Gassers', notes: ''},
+          {id: 136, sets: null, reps: '4', time: '30sec', tofail: false, name: 'Half Gassers', notes: ''},
           {id: 137, sets: null, reps: '4', time: null, tofail: false, name: '30 Yard Jumps', notes: ''}
         ]
       },
@@ -949,8 +949,8 @@ var exercises = {
     images: 0
   },
   138: {
-    name:'Full Gassers',
-    desc:'Similar to the half gasser, except this time the cones will be placed 60 yards apart and the time that you will be expected to complete the run in is between 18-20 seconds.  After completing the run, you will have the balance of 1 minute to rest (approximately 40 seconds) before you perform your next rep.',
+    name:'Full Gassers',  
+    desc:'Place two cones in a straight line 60 yards apart.  While holding a stopwatch to time yourself, sprint from the first cone to the second.  When you reach the second cone, turn and change direction sprinting back to the first cone.  Try to complete the round trip in about 18-20 seconds.  Regardless of how long it takes you to complete the trip, you have the remainder of the 60 seconds (approximately 40 seconds) to rest until you have to perform your next rep.  Continue in this manner, completing the run and then getting your rest, all within 1 minute.',
     images: 0
   },
   139: {
