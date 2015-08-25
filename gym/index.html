@@ -114,6 +114,12 @@
             <md-divider ng-if="!$last"></md-divider>
           </md-list-item>
         </md-list>
+        <p data-ng-if="day.note">{{day.note}}</p>
+        <p data-ng-if="day.rankings">
+          <ul>
+            <li data-ng-repeat="rank in day.rankings">{{rank}}</li>
+          </ul>
+        </p>
       </md-content>
       
     </section>

@@ -4,6 +4,63 @@ var dayTypes = {
     CHALLENGE: {code:'CHALLENGE', name:"Challenge", color:'red', icon:'trophy'}
 }
 
+var challenges = {
+  WEEK4: {
+    exercises: [
+      {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Pushups', notes: ''},
+      {id: 19,   sets: null, reps: '100', time: null, tofail: false, name: 'Inverted Row (Inverted Pullups)', notes: ''},
+      {id: 1,    sets: null, reps: '100', time: null, tofail: false, name: 'Bodyweight Squats', notes: ''},
+      {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Full Sit Ups', notes: ''}
+    ],
+    note: 'The manner in which you complete your 100 reps of each is totally up to you! You can do 5 sets of 20 each, 10 sets of 10, whatever! Just get it done in good form and in your fastest time possible!',
+    rankings: [
+      'Elite - Under 8 Minutes',
+      'Xtreme - Between 8 minutes and 11 minutes',
+      'Pro - Between 11 minutes and 14 minutes',
+      'Solid - Between 14 minutes and 17 minutes',
+      'Rookie - Over 17 minutes (recommend not advance yet)'
+    ]
+  },
+/*
+week 8 monday - same as week 4
+*/
+  WEEK8: {
+    exercises: [
+      {id: null, sets: 20, reps: '10', time: null, tofail: false, name: 'Pushups', notes: ''},
+      {id: 19,   sets: 20, reps: '5', time: null, tofail: false, name: 'Inverted Row (Inverted Pullups)', notes: ''},
+      {id: 1,    sets: 20, reps: '10', time: null, tofail: false, name: 'Bodyweight Squats', notes: ''},
+      {id: null, sets: 20, reps: '10', time: null, tofail: false, name: 'Jumping Jacks', notes: ''}
+    ],
+    note: 'Perform the four exercises every minute for 20 straight minutes without missing any reps.',
+    rankings: [
+      'Elite - Make it through all 20 rounds in 20 minutes',
+      'Xtreme - Make it through all 20 rounds in > 20 minutes',
+      'Pro - Make it through 16-19 rounds before failure',
+      'Solid - Make it through 12-15 rounds before failure',
+      'Rookie - Reach muscular failure before 11 rounds'
+    ]
+  },
+  /*
+week 12 monday - same as week 4
+  */
+  WEEK12: {
+    exercises: [
+      {id: 81, sets: 12, reps: '10', time: null, tofail: false, name: 'Burpee Pushups (no pyramind)', notes: ''},
+      {id: 38, sets: 12, reps: '10', time: null, tofail: false, name: 'Kettlebell Swings', notes: ''},
+      {id: 19, sets: 12, reps: '10', time: null, tofail: false, name: 'Inverted Rows (Inverted Pullups)', notes: ''},
+      {id: 117, sets: 12, reps: '10', time: null, tofail: false, name: 'Physioball Knee Tucks (no circles)', notes: ''}
+    ],
+    note: 'Perform 12 rounds of the 4 exercises as fast as you can!',
+    rankings: [
+      'Elite - Make it through 12 rounds in <15 minutes',
+      'Xtreme - Make it through 12 rounds in 15-20 minutes',
+      'Pro - Make it through 12 rounds in 20-25 minutes',
+      'Solid - Make it through 12 rounds in 25-30 minutes (recommend repeat)',
+      'Rookie - Make it through 12 rounds in >30 minutes (recommend repeat)'
+    ]
+  }
+}
+
 // based on javasript date getDay() for day of week, monday-friday 1-5
 var weeks = [
   {
@@ -205,12 +262,9 @@ var weeks = [
         id: 1, // MONDAY
         type: dayTypes.CHALLENGE.code,
         desc: 'Challenge I',
-        exercises: [
-          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Pushups', notes: ''},
-          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Inverted Pull Ups', notes: ''},
-          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Bodyweight Squats', notes: ''},
-          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Full Sit Ups', notes: ''}
-        ]
+        exercises: challenges.WEEK4.exercises,
+        note: challenges.WEEK4.note,
+        rankings: challenges.WEEK4.rankings
       },
       {
         id: 2, // TUESDAY
@@ -251,12 +305,9 @@ var weeks = [
         id: 5, // FRIDAY
         type: dayTypes.CHALLENGE.code,
         desc: 'Challenge Retest',
-        exercises: [
-          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Pushups', notes: ''},
-          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Inverted Pull Ups', notes: ''},
-          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Bodyweight Squats', notes: ''},
-          {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Full Sit Ups', notes: ''}
-        ]
+        exercises: challenges.WEEK4.exercises,
+        note: challenges.WEEK4.note,
+        rankings: challenges.WEEK4.rankings
       }
     ]
   }
