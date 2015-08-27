@@ -268,7 +268,7 @@ var weeks = [
       },
       {
         id: 2, // TUESDAY
-        type: dayTypes.CONDITIONING.code,
+        type: dayTypes.STRENGTH_TRAINING.code,
         desc: 'Core',
         exercises: [
           {id: 103, sets: 2, reps: '12', time: null, tofail: false, name: 'Rollups', notes: 'Lower yourself down very slowly'},
@@ -280,7 +280,7 @@ var weeks = [
       },
       {
         id: 3, // WEDNESDAY
-        type: dayTypes.STRENGTH_TRAINING.code,
+        type: dayTypes.CONDITIONING.code,
         desc: 'Jumping',
         exercises: [
           {id: 130, sets: null, reps: '50', time: null, tofail: false, name: 'Jump Rope – Two Foot Hops', notes: '50 jumps'},
@@ -293,7 +293,7 @@ var weeks = [
       },
       {
         id: 4, // THURSDAY
-        type: dayTypes.CONDITIONING.code,
+        type: dayTypes.STRENGTH_TRAINING.code,
         desc: 'Core',
         exercises: [
           {id: 107, sets: 3, reps: '30', time: null, tofail: false, name: 'Plank Straight Leg March', notes: 'Alternate 15 reps on each leg per set'},
