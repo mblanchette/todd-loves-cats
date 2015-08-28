@@ -264,7 +264,8 @@ var weeks = [
         desc: 'Challenge I',
         exercises: challenges.WEEK4.exercises,
         note: challenges.WEEK4.note,
-        rankings: challenges.WEEK4.rankings
+        rankings: challenges.WEEK4.rankings,
+        showChallengeCounter: true
       },
       {
         id: 2, // TUESDAY
@@ -307,7 +308,8 @@ var weeks = [
         desc: 'Challenge Retest',
         exercises: challenges.WEEK4.exercises,
         note: challenges.WEEK4.note,
-        rankings: challenges.WEEK4.rankings
+        rankings: challenges.WEEK4.rankings,
+        showChallengeCounter: true
       }
     ]
   }

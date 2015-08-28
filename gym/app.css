@@ -34,3 +34,7 @@
 .exercise h3 {
   margin: 0; /* avoid extra space around exercise title */
 }
+.challengeCounts {
+  background-color: white;
+  padding: 10px;
+}

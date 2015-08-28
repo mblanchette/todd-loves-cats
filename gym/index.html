@@ -120,6 +120,19 @@
             <li data-ng-repeat="rank in day.rankings">{{rank}}</li>
           </ul>
         </p>
+        <div class="challengeCounts" data-ng-if="day.showChallengeCounter" layout="column">
+          <div>
+            <div data-ng-repeat="exercise in day.exercises">
+              <span>{{challengeCounts[exercise.name] || 0}} / {{exercise.reps}}</span>
+              <md-button class="md-raised" md-no-ink data-ng-class="{'md-primary':exercise.name===challengeExercise}"
+                data-ng-click="setChallengeExercise(exercise.name)">{{exercise.name}}</md-button>
+            </div>
+          </div>
+          <div>
+            <md-button class="md-raised" md-no-ink data-ng-repeat="inc in challengeIncrements" 
+              data-ng-click="incrementChallengeCount(inc)">{{inc}}</md-button>
+          </div>
+        </div>
       </md-content>
       
     </section>

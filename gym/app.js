@@ -188,6 +188,8 @@ angular.module('gymApp', ['ngMaterial'])
     $scope.showDay = function(day) {
       $scope.day = day;
       $scope.exercise = null;
+      $scope.challengeCounts = {};
+      $scope.challengeExercise = null;
       $scope.setView('day');
     }
     $scope.showToday = function() {
@@ -206,5 +208,24 @@ angular.module('gymApp', ['ngMaterial'])
     }
     $scope.getDayTypeName = function(dayType) {
       return dayTypes[dayType].name;
+    }
+    
+    // CHALLENGE
+    
+    var challengeIncrements = [];
+    for( var i = 5; i <= 50; i+=5 ) {
+      challengeIncrements.push(i);
+    }
+    $scope.challengeIncrements = challengeIncrements;
+    
+    $scope.incrementChallengeCount = function(amount) {
+      if( !$scope.challengeExercise ) return;
+      if( !$scope.challengeCounts[$scope.challengeExercise] ) {
+        $scope.challengeCounts[$scope.challengeExercise] = 0;
+      }
+      $scope.challengeCounts[$scope.challengeExercise] += amount;
+    }
+    $scope.setChallengeExercise = function(exerciseName) {
+      $scope.challengeExercise = exerciseName;
     }
   });
