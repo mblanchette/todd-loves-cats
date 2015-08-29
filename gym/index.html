@@ -109,6 +109,7 @@
                 <span ng-show="exercise.time">{{exercise.time}}</span>
                 <span ng-show="exercise.tofail">(TO FAIL)</span>
               </h4>
+              <p ng-show="day.showRestTime">Rest: {{getExerciseRestTime(week.id, day, exercise.pairCode, exercise.id)}}</p>
               <p>{{exercise.notes}}</p>
             </div>
             <md-divider ng-if="!$last"></md-divider>

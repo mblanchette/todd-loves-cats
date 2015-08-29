@@ -162,6 +162,26 @@ angular.module('gymApp', ['ngMaterial'])
       });
     }
 
+    $scope.getExerciseRestTime = function(weekId, day, exercisePairCode, exerciseId) {
+      var exercise = exercises[exerciseId];
+      var isCore = exercise && exercise.core ? true : false;
+      if( weekId <= 4 ) {
+        if( day.desc === 'Core' || isCore ) return '30sec';
+        return '60sec';
+      } else if ( weekId <= 8 ) {
+        if( day.desc === 'Core' || isCore ) return '30sec';
+        return '30-45sec';
+      } else if ( weekId <= 12 ) {
+        if( day.desc === 'Core' || isCore ) return '0sec (perform as 1 set)';
+        if( day.type === dayTypes.STRENGTH_TRAINING.code ) {
+          if( exercisePairCode === 'a' ) return '0sec (continue to next in pair)';
+          if( exercisePairCode === 'b' ) return '60sec (between pair sets)';
+        }
+        return '30sec'; // valid fallback value?
+      }
+      return '';
+    };
+    
     $scope.getExerciseImages = function(id) {
       var exercise = exercises[id];
       var images = [];
