@@ -5,6 +5,14 @@
 .home-box-width {
   max-width: 300px;
 }
+.weeksoff md-input-container {
+  width: 80%;
+}
+.weeksoff .md-icon-button {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
 .day.blue, md-list-item.day.blue button.md-button:not([disabled]):hover {
   background: #80d8ff; 
 }

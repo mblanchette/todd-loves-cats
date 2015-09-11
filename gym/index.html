@@ -65,8 +65,22 @@
           <md-whiteframe class="md-whiteframe-z1 home-box-width" layout-padding="">
             <md-input-container>
               <label>Week 1 began on:</label>
-              <input type="date" ng-model="startDate" ng-change="changeStartDate()" placeholder="yyyy-MM-dd"/>
+              <input type="date" ng-model="config.startDate" ng-change="changeStartDate()" placeholder="yyyy-MM-dd"/>
             </md-input-container>
+          </md-whiteframe>
+          <md-whiteframe class="weeksoff md-whiteframe-z1 home-box-width" layout-padding="">
+            <div>Weeks Off:</div>
+            <div layout="row" data-ng-repeat="weekOff in config.weeksOff track by $index">
+              <md-input-container md-no-float="">
+                <input type="date" ng-model="config.weeksOff[$index]" ng-change="changeWeeksOff($index, weekOff)" placeholder="yyyy-MM-dd" />
+              </md-input-container>
+              <md-button class="md-icon-button" aria-label="Remove" ng-click="removeWeekOff($index)">
+                <md-icon md-svg-icon="minus"></md-icon>
+              </md-button>
+            </div>
+            <md-button class="md-icon-button" aria-label="Add" ng-click="addWeekOff()">
+              <md-icon md-svg-icon="plus"></md-icon>
+            </md-button>
           </md-whiteframe>
         </div>
       </md-content>

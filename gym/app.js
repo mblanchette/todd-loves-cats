@@ -7,7 +7,9 @@ angular.module('gymApp', ['ngMaterial'])
           .icon("close"     ,"./img/close.svg"               ,24)
           .icon("dumbbell"  ,"./img/dumbbell.svg"            ,24)
           .icon("run"       ,"./img/run.svg"                 ,24)
-          .icon("trophy"    ,"./img/trophy-variant.svg"      ,24);
+          .icon("trophy"    ,"./img/trophy-variant.svg"      ,24)
+          .icon("plus"      ,"./img/plus-circle.svg"         ,24)
+          .icon("minus"     ,"./img/minus-circle.svg"        ,24);
   })
   .controller('AppController',function($scope, $location, $log, $window, $mdSidenav, $mdUtil, $mdDialog){
   
@@ -40,32 +42,47 @@ angular.module('gymApp', ['ngMaterial'])
       closeLeft(); // Close sidenav incase open over view
     };
   
-    var startDateKey = 'gymAppStartDate';
-    function getStartDateFromStorage(key) {
+    var storageKey = 'gymAppConfig';
+    function getConfigFromStorage() {
         try {
-            var dateStr = $window.localStorage.getItem(key);
-            if( dateStr != null ) {
-              $log.log('loaded start date from local storage', dateStr);
-              return new Date( parseInt( dateStr ) );
+            var configStr = $window.localStorage.getItem(storageKey);
+            if( configStr != null ) {
+              $log.log('loaded config from local storage', configStr);
+              var obj = angular.fromJson(configStr);
+              // Convert date strings back to date objects
+              if( obj.startDate ) {
+                obj.startDate = new Date(obj.startDate);
+              }
+              if( obj.weeksOff && obj.weeksOff.length ) {
+                for( var i = 0; i < obj.weeksOff.length; i++ ) {
+                  obj.weeksOff[i] = new Date( obj.weeksOff[i] );
+                }
+              }
+              return obj;
             }
         } catch (err) {
-            $log.error('failed to read local storage, returning default date');
+            $log.error('failed to read local storage, returning default config');
         }
         return null;
     }
-    function writeStartDateToStorage(key, date) {
+    function writeConfigToStorage(data) {
         try {
-            $window.localStorage.setItem(key, "" + date.getTime());
+            $window.localStorage.setItem(storageKey, angular.toJson(data));
         } catch (err) {
             $log.error('failed to write local storage, date will not be saved');
         }
     }
-    var start = getStartDateFromStorage(startDateKey);
-    if( start === null ) { // Setting default start date
-      start = new Date(2015, 7, 3, 0, 0, 0, 0); // Mon Aug 3, 2015
+    var config = getConfigFromStorage();
+    if( config === null ) { // Setting default start date and weeks off
+      config = {
+        startDate: new Date(2015, 7, 3, 0, 0, 0, 0), // Mon Aug 3, 2015  
+        weeksOff: [
+          new Date(2015, 7, 31, 0, 0, 0, 0) // Mon Aug 31, 2015  
+        ]
+      }
     }
-    $scope.startDate = start;
-    $log.log('start date', $scope.startDate);
+    $scope.config = config;
+    $log.log('config', $scope.config);
     
     function createDate(startdate, week, day) {
       var workDate = new Date(startdate.getTime());
@@ -81,10 +98,29 @@ angular.module('gymApp', ['ngMaterial'])
     $scope.currentDate = currentDate;
     $scope.weeks = weeks;
     
-    function setDateOnAllDays(start) {
+    function getWeeksOffMap() {
+      var weeksOffMap = {};
+      angular.forEach($scope.config.weeksOff, function(weekOff, index) {
+         this[weekOff.getTime()] = true;
+      }, weeksOffMap);
+      return weeksOffMap;
+    }
+    function setDateOnAllDays() {
+      var start = $scope.config.startDate;
+      var weeksOffMap = getWeeksOffMap();
+      // reset today values for week/day, will change
+      $scope.today = {};
+      
+      var skippedWeeks = 0;
       angular.forEach(weeks, function(week, index) {
         angular.forEach(week.days, function(day, index2) {
-          var workDate = createDate(start, week.id, day.id);
+          var workDate = createDate(start, week.id + skippedWeeks, day.id);
+          if( index2 === 0 ) { // Monday of week
+            while( weeksOffMap[workDate.getTime()] ===  true ) {
+              skippedWeeks++;
+              workDate = createDate(start, week.id + skippedWeeks, day.id);
+            }
+          }
           day.date = workDate;
           
           var isToday = workDate.getTime() === currentDate.getTime();
@@ -95,14 +131,16 @@ angular.module('gymApp', ['ngMaterial'])
         });
       });
     }
-    setDateOnAllDays($scope.startDate);
+    setDateOnAllDays();
     $log.log('today', $scope.today);
     
+    function handleConfigChange() {
+      writeConfigToStorage($scope.config);
+      // Reset dates attached to all days when changed
+      setDateOnAllDays();
+    }
     $scope.changeStartDate = function() {
-      // reset today values for week/day, will change
-      $scope.today = {};
-      
-      var start = $scope.startDate;
+      var start = $scope.config.startDate;
       $log.log('changed start date', start);
       if( !start ) return; // invalid, no date is specified
       var dayofweek = start.getDay();
@@ -110,10 +148,26 @@ angular.module('gymApp', ['ngMaterial'])
         // adjust start date to monday of week
         start.setDate( start.getDate() - (dayofweek - 1) );
       }
-      writeStartDateToStorage(startDateKey, start);
-      
-      // Reset dates attached to all days when changed
-      setDateOnAllDays(start);
+      handleConfigChange();
+    }
+    $scope.changeWeeksOff = function(index) {
+      var weekOff = $scope.config.weeksOff[index];
+      $log.log('changed week off', index, weekOff);
+      if( !weekOff ) return; // invalid, no date is specified
+      var dayofweek = weekOff.getDay();
+      if( dayofweek !== 1 ) {
+        // adjust date to monday of week
+        weekOff.setDate( weekOff.getDate() - (dayofweek - 1) );
+      }
+      handleConfigChange()
+    }
+    $scope.removeWeekOff = function(index) {
+      $log.log('removed week off', index);
+      $scope.config.weeksOff.splice(index, 1);
+      handleConfigChange()
+    }
+    $scope.addWeekOff = function() {
+      $scope.config.weeksOff.push( null );
     }
     
     function setDesriptionLines(exercise) {
