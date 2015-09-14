@@ -392,6 +392,72 @@ var weeks = [
         ]
       }
     ]
+  },
+  {
+    id: 6, // WEEK 6
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Total Body',
+        showRestTime: true,
+        exercises: [
+          {id: 80, sets: 3, reps: '12-15', time: null, tofail: false, name: 'Single Leg Squat with Mini Jumps', notes: 'Explosively push off the ground and land softly'},
+          {id: 52, sets: 2, reps: '12', time: null, tofail: false, name: '3-Way DB RDL', notes: 'Perform 4 “rounds” of 3 reps ? out, in, and @knee'},
+          {id: 54, sets: 3, reps: '10-12', time: null, tofail: false, name: 'Low Tubing Rotational Row', notes: '3 sets of 10-12 reps on each arm with tubing'},
+          {id: 48, sets: 3, reps: '10', time: null, tofail: false, name: 'Straight Arm Pushdowns (50/50s)', notes: 'Do these reps slowly and in good form'},
+          {id: 45, sets: 3, reps: '/', time: null, tofail: true, name: 'Physioball Incline Push Up Plus', notes: 'Place ball in a corner so it won’t roll away. To failure'},
+          {id: 36, sets: 3, reps: '12', time: null, tofail: false, name: 'Woodchopper Pushdowns', notes: 'Alternate 6 reps to the right and 6 to the left each set'}
+        ]
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Sprints - baseball diamond',
+        exercises: [
+          {id: null, sets: null, reps: '10', time: null, tofail: false, name: 'Single sprints', notes: 'Sprint from Home to First base (90ft)'},
+          {id: null, sets: null, reps: '8', time: null, tofail: false, name: 'Triple sprints', notes: 'Sprint from Home to Third base (90ft x 3)'},
+          {id: null, sets: null, reps: '6', time: null, tofail: false, name: 'Double then Score sprints', notes: 'Sprint Home to 2nd (90ft x 2), Rest 30sec, Sprint 2nd to Home (90ft x 2)'},
+          {id: null, sets: null, reps: '3', time: null, tofail: false, name: 'Homerun sprints', notes: 'Sprint Home around all bases back to Home (90ft x 4), Inside the park homerun'}
+        ]
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Core',
+        exercises: [
+          {id: 105, sets: 2, reps: '/', time: null, tofail: true, name: 'Heel to the Heavens', notes: 'Do 2 sets of as many reps as you can'},
+          {id: 104, sets: 2, reps: '15', time: null, tofail: false, name: 'Jackknifes', notes: '2 sets of 15 on each leg without resting in between'},
+          {id: 107, sets: 2, reps: '30', time: null, tofail: false, name: 'Plank March', notes: '30 marches each foot per set while in plank'},
+          {id: 116, sets: 2, reps: '30', time: null, tofail: false, name: 'Plank Same Side Knee to Elbow', notes: '15 reps right to left and vice versa'}
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Cardio - 400m track',
+        exercises: [
+          {id: null, sets: null, reps: '1 lap', time: null, tofail: false, name: 'Warmup jog', notes: ''},
+          {id: null, sets: null, reps: '4-5 laps', time: null, tofail: false, name: 'Sprint and Jog', notes: 'Sprint straight-aways and jog curves. Alternate 100m sprint to 100m jog twice per lap'},
+          {id: null, sets: null, reps: '1 lap', time: null, tofail: false, name: 'Cooldown jog', notes: ''}
+        ]
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Total Body',
+        exercises: [
+          {id: 85, sets: 3, reps: '12', time: null, tofail: false, name: 'Crossover Lunge', notes: 'Alternate 6 reps to each side each set'},
+          {id: 10, sets: 3, reps: '10-12', time: null, tofail: false, name: 'Forward Step Ups', notes: 'Optional wear either weighted vest or hold db’s '},
+          {id: 6,  sets: 3, reps: '10-12', time: null, tofail: false, name: '1 Arm DB Row', notes: '3 sets of 10-12 on each arm'},
+          {id: 16, sets: 3, reps: '40', time: null, tofail: false, name: 'Standing Tubing Bicep Curls', notes: 'Yes....40 reps! Make it burn!'},
+          {id: 17, sets: 3, reps: '20', time: null, tofail: false, name: 'Minibox Upper Body Step Ups', notes: 'Hands go up, up, down, down = 1 rep'},
+          {id: 69, sets: 3, reps: '12', time: null, tofail: false, name: 'Shoulder DB/Tubing“L” Raises', notes: '6 reps forward and 6 to the side each set'}
+        ]
+      }
+    ]
   }
   
 ];
