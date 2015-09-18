@@ -458,7 +458,77 @@ var weeks = [
         ]
       }
     ]
-  }
+  },
+  {
+    id: 7, // WEEK 7
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Total Body',
+        showRestTime: true,
+        exercises: [
+          {id: 50, sets: 3, reps: '12', time: null, tofail: false, name: 'Side Step Ups', notes: 'Perform 3 sets of 12 on each leg'},
+          {id: 60, sets: 3, reps: '10-12', time: null, tofail: false, name: 'Slick Floor Bridge and Curl', notes: 'Just take off your shoes and do this on a hardwood floor or slippery surface. Slide legs in and out'},
+          {id: 99, sets: 3, reps: '10', time: null, tofail: false, name: 'Spiderman Push Ups', notes: 'Same as the spiderman crawl, except do a pushup with every step up and back...yes it’s hard!'},
+          {id: 71, sets: 3, reps: '10-12', time: null, tofail: false, name: 'DB Curl and Press', notes: 'Keep your core tight throughout this exercise'},
+          {id: 76, sets: 3, reps: '/', time: null, tofail: true, name: 'Pull Ups', notes: 'Perform as many reps as you can to failure each set'},
+          {id: 93, sets: 2, reps: '8-10', time: null, tofail: false, name: 'Eccentric "Brake Slammers"', notes: 'Do 2 sets on each arm to strengthen rotator cuffs'}
+        ]
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Circuit - Fantastic Four',
+        // showRestTime: true,
+        exercises: [
+          {id: null, sets: 4, reps: null, time: '1min', tofail: false, name: 'Jumping Jacks', notes: 'No rest'},
+          {id: null, sets: 4, reps: null, time: '1min', tofail: false, name: 'Mountain Climbers', notes: 'No rest'},
+          {id: null, sets: 4, reps: null, time: '1min', tofail: false, name: 'Inchworms', notes: 'No rest'},
+          {id: null, sets: 4, reps: null, time: '1min', tofail: false, name: 'Bodyweight Squats', notes: 'End of round, Rest 1 min'}
+        ],
+        note: 'Perform each exercise in a row without rest. This is 1 round. Rest 1 minute after a round. Perform 4 rounds!'
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Core',
+        exercises: [
+          {id: 111, sets: 2, reps: '15', time: null, tofail: false, name: 'ISO Crunches', notes: 'Initiate movement from the core...not the legs'},
+          {id: 117, sets: 2, reps: '16', time: null, tofail: false, name: 'Around The Worlds', notes: '8 circles CW and 8 circles CCW'},
+          {id: 110, sets: 2, reps: '/',  time: null, tofail: true, name: 'V-Up Russian Twist', notes: 'Do as many reps as you can until failure'},
+          {id: 113, sets: 2, reps: '40', time: null, tofail: false, name: 'Canoes', notes: 'Each "canoe stroke" is considered one rep'}
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Cycling Tour',
+        // showRestTime: true,
+        exercises: [
+          {id: null, sets: 1, reps: null, time: '5min', tofail: false, name: 'Warmup spin', notes: ''},
+          {id: null, sets: 8, reps: null, time: '1.5min', tofail: false, name: '', notes: 'Cycles of 30 second sprint pedaling w/ 1 minute casual spin'},
+          {id: null, sets: 1, reps: null, time: '5min', tofail: false, name: 'Cooldown', notes: ''}
+        ],
+        notes: 'Perform this sequence while riding either an upright or recumbent bike, spin cycle, or bicycle'
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Total Body',
+        exercises: [
+          {id: 38, sets: 3, reps: '20', time: null, tofail: false, name: 'Kettlebell / DB Swing', notes: 'Increase your reps to 20 per set for more intensity'},
+          {id: 24, sets: 3, reps: '15', time: null, tofail: false, name: 'Hip Bucks', notes: 'Push through your heels and activate the glutes'},
+          {id: 4,  sets: 3, reps: '10', time: null, tofail: false, name: 'Hip Miniband Monster Walk ', notes: 'Squat down and keep feet shoulder width as you walk'},
+          {id: 75, sets: 3, reps: '10-12', time: null, tofail: false, name: 'DB Clean and Press', notes: 'Explosiveness is key to moving the weight here!'},
+          {id: 14, sets: 3, reps: '10-12', time: null, tofail: false, name: 'Tubing/Cable Chest Press', notes: 'Perform 3 sets of 10-12 with each arm'},
+          {id: 19, sets: 3, reps: '/', time: null, tofail: true, name: 'Inverted Row ', notes: 'End with everything you’ve got! Try to keep the legs straight if you can for as many reps as possible'}
+        ]
+      }
+    ]
+  } 
   
 ];
 
