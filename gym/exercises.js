@@ -8,7 +8,7 @@ var challenges = {
   WEEK4: {
     exercises: [
       {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Pushups', notes: ''},
-      {id: 19,   sets: null, reps: '100', time: null, tofail: false, name: 'Inverted Row (Inverted Pullups)', notes: ''},
+      {id: 19,   sets: null, reps: '100', time: null, tofail: false, name: 'Inverted Row/Pullups', notes: ''},
       {id: 1,    sets: null, reps: '100', time: null, tofail: false, name: 'Bodyweight Squats', notes: ''},
       {id: null, sets: null, reps: '100', time: null, tofail: false, name: 'Full Sit Ups', notes: ''}
     ],
@@ -27,7 +27,7 @@ week 8 monday - same as week 4
   WEEK8: {
     exercises: [
       {id: null, sets: 20, reps: '10', time: null, tofail: false, name: 'Pushups', notes: ''},
-      {id: 19,   sets: 20, reps: '5', time: null, tofail: false, name: 'Inverted Row (Inverted Pullups)', notes: ''},
+      {id: 19,   sets: 20, reps: '5', time: null, tofail: false, name: 'Inverted Row/Pullups', notes: ''},
       {id: 1,    sets: 20, reps: '10', time: null, tofail: false, name: 'Bodyweight Squats', notes: ''},
       {id: null, sets: 20, reps: '10', time: null, tofail: false, name: 'Jumping Jacks', notes: ''}
     ],
@@ -47,7 +47,7 @@ week 12 monday - same as week 4
     exercises: [
       {id: 81, sets: 12, reps: '10', time: null, tofail: false, name: 'Burpee Pushups (no pyramind)', notes: ''},
       {id: 38, sets: 12, reps: '10', time: null, tofail: false, name: 'Kettlebell Swings', notes: ''},
-      {id: 19, sets: 12, reps: '10', time: null, tofail: false, name: 'Inverted Rows (Inverted Pullups)', notes: ''},
+      {id: 19, sets: 12, reps: '10', time: null, tofail: false, name: 'Inverted Rows/Pullups', notes: ''},
       {id: 117, sets: 12, reps: '10', time: null, tofail: false, name: 'Physioball Knee Tucks (no circles)', notes: ''}
     ],
     note: 'Perform 12 rounds of the 4 exercises as fast as you can!',
@@ -528,7 +528,59 @@ var weeks = [
         ]
       }
     ]
-  } 
+  },
+  {
+    id: 8, // WEEK 8
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.CHALLENGE.code,
+        desc: 'Challenge Retest',
+        exercises: challenges.WEEK4.exercises,
+        note: challenges.WEEK4.note,
+        rankings: challenges.WEEK4.rankings,
+        showChallengeCounter: true
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: '',
+        exercises: [
+          {id: 107, sets: 3, reps: '30', time: null, tofail: false, name: 'Plank Straight Leg March', notes: '15 lifts on each leg while maintaining plank'},
+          {id: 116, sets: 3, reps: '30', time: null, tofail: false, name: 'Plank Same Side Knee to Elbow', notes: '15 elbow to knee touches on each side per set'},
+          {id: 112, sets: 3, reps: '30', time: null, tofail: false, name: 'Plank Opposite Knee to Elbow', notes: '15 elbow to knee touches on each side per set'},
+          {id: 32,  sets: 3, reps: '15', time: null, tofail: false, name: 'Physioball Reverse Hypers', notes: 'Lift your legs straight using your glutes/low back'}
+        ]
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Day Off',
+        exercises: [
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: '',
+        exercises: [
+          {id: 108, sets: 2, reps: '/', time: null, tofail: true, name: 'Starfish Crunches', notes: 'Do as many reps as you can to failure'},
+          {id: 104, sets: 2, reps: '15', time: null, tofail: false, name: 'Jackknifes', notes: '15 reps with right leg high and 15 with the left leg high each set. No rest in between'},
+          {id: 115, sets: 2, reps: '20', time: null, tofail: false, name: 'BOSU Tuck Crunch', notes: 'Can be done on end of bench as well'},
+          {id: 117, sets: 2, reps: '20', time: null, tofail: false, name: 'Physioball Around The Worlds', notes: '10 clockwise circles and 10 ccw circles'}
+        ]
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.CHALLENGE.code,
+        desc: 'Challenge II',
+        exercises: challenges.WEEK8.exercises,
+        note: challenges.WEEK8.note,
+        rankings: challenges.WEEK8.rankings,
+        showChallengeCounter: false
+      }
+    ]
+  }
   
 ];
 
