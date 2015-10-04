@@ -544,7 +544,7 @@ var weeks = [
       {
         id: 2, // TUESDAY
         type: dayTypes.STRENGTH_TRAINING.code,
-        desc: '',
+        desc: 'Core',
         exercises: [
           {id: 107, sets: 3, reps: '30', time: null, tofail: false, name: 'Plank Straight Leg March', notes: '15 lifts on each leg while maintaining plank'},
           {id: 116, sets: 3, reps: '30', time: null, tofail: false, name: 'Plank Same Side Knee to Elbow', notes: '15 elbow to knee touches on each side per set'},
@@ -562,7 +562,7 @@ var weeks = [
       {
         id: 4, // THURSDAY
         type: dayTypes.STRENGTH_TRAINING.code,
-        desc: '',
+        desc: 'Core',
         exercises: [
           {id: 108, sets: 2, reps: '/', time: null, tofail: true, name: 'Starfish Crunches', notes: 'Do as many reps as you can to failure'},
           {id: 104, sets: 2, reps: '15', time: null, tofail: false, name: 'Jackknifes', notes: '15 reps with right leg high and 15 with the left leg high each set. No rest in between'},
@@ -580,7 +580,81 @@ var weeks = [
         showChallengeCounter: false
       }
     ]
+  },
+  {
+    id: 9, // WEEK 9
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Upper Body',
+        showRestTime: true,
+        exercises: [
+          {id: 98, sets: 3, reps: '10', time: null, tofail: false, name: '1a. Inchworms', notes: 'Cover distance as you walk into each rep', exercisePairCode:'a'},
+          {id: 74, sets: 3, reps: '12-15', time: null, tofail: false, name: '1b. BOSU Plyo Push Up', notes: 'Explode off the ground and clear the BOSU', exercisePairCode:'b'},
+          {id: 27, sets: 3, reps: '10-12', time: null, tofail: false, name: '2a. Tubing Tricep Kickbacks', notes: 'Squeeze at the end of each rep', exercisePairCode:'a'},
+          {id: 12, sets: 3, reps: '10-12', time: null, tofail: false, name: '2b. Lat Pulldowns', notes: 'Use a shoulder width grip or slightly narrower', exercisePairCode:'b'},
+          {id: 82, sets: 3, reps: '10', time: null, tofail: false, name: '3a. DB Fielder Curls', notes: ' Maintain a flat back throughout the exercise', exercisePairCode:'a'},
+          {id: 78, sets: 3, reps: '12', time: null, tofail: false, name: '3b. Rotational DB Shoulder Press', notes: 'Try to perform these one arm at a time', exercisePairCode:'b'}
+        ]
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Cardio - Playing Cards',
+        // showRestTime: true,
+        exercises: [
+          {id: null, sets: 4, reps: '10-20', time: null, tofail: false, name: 'Jump Squats', notes: 'Jacks, reps 10,12,15,20 for suit'},
+          {id: null, sets: 4, reps: '10-20', time: null, tofail: false, name: 'Mountain Climbers', notes: 'Queens, reps 10,12,15,20 for suit'},
+          {id: null, sets: 4, reps: '10-20', time: null, tofail: false, name: 'High Knees', notes: 'Kings, reps 10,12,15,20 for suit'},
+          {id: 105, sets: 4, reps: '10-20', time: null, tofail: false, name: 'Heels to the Heavens', notes: 'Aces, reps 10,12,15,20 for suit'}
+        ],
+        notes: 'Use only the 16 face cards and aces of a deck. The suit represent the number of reps, the card represents the exercise. Shuffle the deck and randomly draw for exercises to perform without rest. Use the following key: Spades=10reps, Diamonds=12reps, Hearts=15reps, Clubs=20reps. Jacks=Jump Squats, Queens=Mountain Climbers, Kings=High Knees, Aces=Heels to the Heavens'
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Lower Body',
+        exercises: [
+          {id: 101, sets: 3, reps: '12', time: null, tofail: false, name: '1a. Drop Step Lunge and Lean', notes: 'Do 12 reps on each leg then, without resting, ...', exercisePairCode:'a'},
+          {id: 23, sets: 3, reps: '12', time: null, tofail: false, name: '1b. Single Leg DB Squat', notes: 'go to part b and do 12 reps on each leg', exercisePairCode:'b'},
+          {id: 3,  sets: 3, reps: '10-12', time: null, tofail: false, name: '2a. DB Single Leg RDL', notes: 'Do 10-12 reps on each leg and then, without resting, ...', exercisePairCode:'a'},
+          {id: 11, sets: 3, reps: '12', time: null, tofail: false, name: '2b. Physioball High Bridges', notes: 'proceed to part b and do 12 bridges', exercisePairCode:'b'},
+          {id: 37, sets: 3, reps: '12', time: null, tofail: false, name: '3a. Step Up Thrusts', notes: 'Do 12 reps on each leg and then, without resting, ...', exercisePairCode:'a'},
+          {id: 42, sets: 3, reps: null, time: '30sec', tofail: false, name: '3b. Split Squat Jumps', notes: 'proceed to part b and do 30 seconds', exercisePairCode:'b'}
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Jump Rope',
+        // showRestTime: true,
+        exercises: [
+          {id: 130, sets: null, reps: '100', time: null, tofail: false, name: 'Two Foot Hops', notes: ''},
+          {id: 132, sets: null, reps: '75', time: null, tofail: false, name: 'Side to Side Hops (2 Feet)', notes: ''},
+          {id: 134, sets: null, reps: null, time: '5min', tofail: false, name: 'Boxer Shuffle', notes: ''},
+          {id: 135, sets: null, reps: '25', time: null, tofail: false, name: 'Double Jumps', notes: ''}
+        ]
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Total Body',
+        exercises: [
+          {id: 66, sets: 4, reps: '10-12', time: null, tofail: false, name: '1a. Dumbbell Deadlifts', notes: 'Keep your head up and back flat throughout', exercisePairCode:'a'},
+          {id: 35, sets: 4, reps: '10-12', time: null, tofail: false, name: '1b. Cable/Tubing Squat to Stand Rows', notes: 'Tie in the upper and lower body together', exercisePairCode:'a'},
+          {id: 19, sets: 4, reps: '10-12', time: null, tofail: false, name: '2a. Inverted Row (Inverted Chin Up)', notes: 'Definitely try and keep your legs out now', exercisePairCode:'a'},
+          {id: 56, sets: 4, reps: '12', time: null, tofail: false, name: '2b. Rotational Pushdowns', notes: 'Alternate 6 reps to right and left each set', exercisePairCode:'a'},
+          {id: 81, sets: 2, reps: '10', time: null, tofail: false, name: '3. Burpee Push Up Pyramid', notes: '1,2,3,4,5,6,7,8,9,10 reps with burpees in between each round'}
+        ]
+      }
+    ]
   }
+  // 10
+  // 11
+  // 12 - challenge  
   
 ];
 
