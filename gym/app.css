@@ -25,6 +25,14 @@
 .day-list md-list-item {
   background-color: white; /* avoid day bg color being applied to list */
 }
+.current-day-icon-placeholder {
+  width: 30px;
+}
+md-list-item  .md-list-item-inner > md-icon:first-child.current-day-icon {
+  margin-right: 5px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
 .content-title {
   padding-left: 0px;
   padding-right: 0px;
@@ -35,6 +43,9 @@
 }
 .content-view {
   max-width: 550px
+}
+.exercise-left-column {
+  margin-top:0px;
 }
 .exercise img {
   width: 100%;

@@ -91,8 +91,11 @@
         </div>
         <md-list>
           <md-list-item ng-repeat="day in week.days" class="day md-3-line" ng-class="getDayTypeColor(day.type)" ng-click="showDay(day)">
+            <div class="current-day-icon-placeholder">
+              <md-icon md-svg-icon="star" ng-show="today.week.id===week.id&&today.day.id===day.id"
+                 class="current-day-icon"></md-icon>
+            </div>
             <div class="md-list-item-text">
-              <md-icon md-svg-icon="star" ng-show="today.week.id===week.id&&today.day.id===day.id"></md-icon>
               <h3 ng-class="{'today':(today.week.id===week.id&&today.day.id===day.id)}">
               Day {{day.id}} - {{day.date | date:'EEE, MMM d'}}</h3>
               <h4>{{getDayTypeName(day.type)}}</h4>
@@ -115,16 +118,20 @@
         </div>
         <md-list class="day-list">
           <md-list-item ng-repeat="exercise in day.exercises" class="md-3-line" ng-click="showExercise(exercise.id, $event)">
-            <div class="md-list-item-text">
-              <h3><span>{{exercise.name}}</span> <span ng-show="exercise.id">({{exercise.id}})</span></h3>
-              <h4>
-                <span ng-show="exercise.sets">{{exercise.sets}}</span> <span>x</span>
-                <span ng-show="exercise.reps">{{exercise.reps}}</span>
-                <span ng-show="exercise.time">{{exercise.time}}</span>
-                <span ng-show="exercise.tofail">(TO FAIL)</span>
-              </h4>
-              <p ng-show="day.showRestTime">Rest: {{getExerciseRestTime(week.id, day, exercise.pairCode, exercise.id)}}</p>
-              <p>{{exercise.notes}}</p>
+            <div class="md-list-item-text" layout="row">
+              <div flex="67">
+                <h3><span>{{exercise.name}}</span> <span ng-show="exercise.id">({{exercise.id}})</span></h3>
+                <p>{{exercise.notes}}</p>
+              </div>
+              <div flex="33" layout-margin="" class="exercise-left-column">
+                <h4>
+                  <span ng-show="exercise.sets">{{exercise.sets}}</span> <span>x</span>
+                  <span ng-show="exercise.reps">{{exercise.reps}}</span>
+                  <span ng-show="exercise.time">{{exercise.time}}</span>
+                  <span ng-show="exercise.tofail">(TO FAIL)</span>
+                </h4>
+                <p ng-show="day.showRestTime">Rest: {{getExerciseRestTime(week.id, day, exercise.pairCode, exercise.id)}}</p>
+              </div>
             </div>
             <md-divider ng-if="!$last"></md-divider>
           </md-list-item>
@@ -173,7 +180,9 @@
               </ul>
             </p>
             <div ng-repeat="image in getExerciseImages(exerciseId)">
-              <img ng-src="./img/exercises/{{image}}.jpg" />
+              <a href="./img/exercises/{{image}}.jpg" target="_blank">
+                <img ng-src="./img/exercises/{{image}}.jpg" />
+              </a>
             </div>
           </div>
         </md-dialog-content>

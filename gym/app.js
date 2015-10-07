@@ -1,15 +1,26 @@
+var icons = [
+  {name:'menu', url:'./img/menu.svg'},
+  {name:'back', url:'./img/keyboard-backspace.svg'},
+  {name:'star', url:'./img/star-outline.svg'},
+  {name:'close', url:'./img/close.svg'},
+  {name:'dumbbell', url:'./img/dumbbell.svg'},
+  {name:'run', url:'./img/run.svg'},
+  {name:'trophy', url:'./img/trophy-variant.svg'},
+  {name:'plus', url:'./img/plus-circle.svg'},
+  {name:'minus', url:'./img/minus-circle.svg'}
+];
+
 angular.module('gymApp', ['ngMaterial'])
   .config(function($mdIconProvider){
-      $mdIconProvider
-          .icon("menu"      ,"./img/menu.svg"                ,24)
-          .icon("back"      ,"./img/keyboard-backspace.svg"  ,24)
-          .icon("star"      ,"./img/star-outline.svg"        ,24)
-          .icon("close"     ,"./img/close.svg"               ,24)
-          .icon("dumbbell"  ,"./img/dumbbell.svg"            ,24)
-          .icon("run"       ,"./img/run.svg"                 ,24)
-          .icon("trophy"    ,"./img/trophy-variant.svg"      ,24)
-          .icon("plus"      ,"./img/plus-circle.svg"         ,24)
-          .icon("minus"     ,"./img/minus-circle.svg"        ,24);
+     angular.forEach(icons, function(icon) {
+       $mdIconProvider.icon(icon.name, icon.url, 24)
+     });
+  })
+  .run(function($http, $templateCache){
+    // Pre-fetch icons sources by url and cache in the $templateCache
+     angular.forEach(icons, function(icon) {
+       $http.get(icon.url, {cache: $templateCache});
+     });
   })
   .controller('AppController',function($scope, $location, $log, $window, $mdSidenav, $mdUtil, $mdDialog){
   

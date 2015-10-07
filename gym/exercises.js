@@ -508,7 +508,7 @@ var weeks = [
         // showRestTime: true,
         exercises: [
           {id: null, sets: 1, reps: null, time: '5min', tofail: false, name: 'Warmup spin', notes: ''},
-          {id: null, sets: 8, reps: null, time: '1.5min', tofail: false, name: '', notes: 'Cycles of 30 second sprint pedaling w/ 1 minute casual spin'},
+          {id: null, sets: 8, reps: null, time: '1.5min', tofail: false, name: 'Interval sprint / spin', notes: 'Cycles of 30 second sprint pedaling w/ 1 minute casual spin'},
           {id: null, sets: 1, reps: null, time: '5min', tofail: false, name: 'Cooldown', notes: ''}
         ],
         notes: 'Perform this sequence while riding either an upright or recumbent bike, spin cycle, or bicycle'
@@ -590,12 +590,12 @@ var weeks = [
         desc: 'Upper Body',
         showRestTime: true,
         exercises: [
-          {id: 98, sets: 3, reps: '10', time: null, tofail: false, name: '1a. Inchworms', notes: 'Cover distance as you walk into each rep', exercisePairCode:'a'},
-          {id: 74, sets: 3, reps: '12-15', time: null, tofail: false, name: '1b. BOSU Plyo Push Up', notes: 'Explode off the ground and clear the BOSU', exercisePairCode:'b'},
-          {id: 27, sets: 3, reps: '10-12', time: null, tofail: false, name: '2a. Tubing Tricep Kickbacks', notes: 'Squeeze at the end of each rep', exercisePairCode:'a'},
-          {id: 12, sets: 3, reps: '10-12', time: null, tofail: false, name: '2b. Lat Pulldowns', notes: 'Use a shoulder width grip or slightly narrower', exercisePairCode:'b'},
-          {id: 82, sets: 3, reps: '10', time: null, tofail: false, name: '3a. DB Fielder Curls', notes: ' Maintain a flat back throughout the exercise', exercisePairCode:'a'},
-          {id: 78, sets: 3, reps: '12', time: null, tofail: false, name: '3b. Rotational DB Shoulder Press', notes: 'Try to perform these one arm at a time', exercisePairCode:'b'}
+          {id: 98, sets: 3, reps: '10', time: null, tofail: false, name: '1a. Inchworms', notes: 'Cover distance as you walk into each rep', pairCode:'a'},
+          {id: 74, sets: 3, reps: '12-15', time: null, tofail: false, name: '1b. BOSU Plyo Push Up', notes: 'Explode off the ground and clear the BOSU', pairCode:'b'},
+          {id: 27, sets: 3, reps: '10-12', time: null, tofail: false, name: '2a. Tubing Tricep Kickbacks', notes: 'Squeeze at the end of each rep', pairCode:'a'},
+          {id: 12, sets: 3, reps: '10-12', time: null, tofail: false, name: '2b. Lat Pulldowns', notes: 'Use a shoulder width grip or slightly narrower', pairCode:'b'},
+          {id: 82, sets: 3, reps: '10', time: null, tofail: false, name: '3a. DB Fielder Curls', notes: ' Maintain a flat back throughout the exercise', pairCode:'a'},
+          {id: 78, sets: 3, reps: '12', time: null, tofail: false, name: '3b. Rotational DB Shoulder Press', notes: 'Try to perform these one arm at a time', pairCode:'b'}
         ]
       },
       {
@@ -617,12 +617,12 @@ var weeks = [
         showRestTime: true,
         desc: 'Lower Body',
         exercises: [
-          {id: 101, sets: 3, reps: '12', time: null, tofail: false, name: '1a. Drop Step Lunge and Lean', notes: 'Do 12 reps on each leg then, without resting, ...', exercisePairCode:'a'},
-          {id: 23, sets: 3, reps: '12', time: null, tofail: false, name: '1b. Single Leg DB Squat', notes: 'go to part b and do 12 reps on each leg', exercisePairCode:'b'},
-          {id: 3,  sets: 3, reps: '10-12', time: null, tofail: false, name: '2a. DB Single Leg RDL', notes: 'Do 10-12 reps on each leg and then, without resting, ...', exercisePairCode:'a'},
-          {id: 11, sets: 3, reps: '12', time: null, tofail: false, name: '2b. Physioball High Bridges', notes: 'proceed to part b and do 12 bridges', exercisePairCode:'b'},
-          {id: 37, sets: 3, reps: '12', time: null, tofail: false, name: '3a. Step Up Thrusts', notes: 'Do 12 reps on each leg and then, without resting, ...', exercisePairCode:'a'},
-          {id: 42, sets: 3, reps: null, time: '30sec', tofail: false, name: '3b. Split Squat Jumps', notes: 'proceed to part b and do 30 seconds', exercisePairCode:'b'}
+          {id: 101, sets: 3, reps: '12', time: null, tofail: false, name: '1a. Drop Step Lunge and Lean', notes: 'Do 12 reps on each leg then, without resting, ...', pairCode:'a'},
+          {id: 23, sets: 3, reps: '12', time: null, tofail: false, name: '1b. Single Leg DB Squat', notes: 'go to part b and do 12 reps on each leg', pairCode:'b'},
+          {id: 3,  sets: 3, reps: '10-12', time: null, tofail: false, name: '2a. DB Single Leg RDL', notes: 'Do 10-12 reps on each leg and then, without resting, ...', pairCode:'a'},
+          {id: 11, sets: 3, reps: '12', time: null, tofail: false, name: '2b. Physioball High Bridges', notes: 'proceed to part b and do 12 bridges', pairCode:'b'},
+          {id: 37, sets: 3, reps: '12', time: null, tofail: false, name: '3a. Step Up Thrusts', notes: 'Do 12 reps on each leg and then, without resting, ...', pairCode:'a'},
+          {id: 42, sets: 3, reps: null, time: '30sec', tofail: false, name: '3b. Split Squat Jumps', notes: 'proceed to part b and do 30 seconds', pairCode:'b'}
         ]
       },
       {
@@ -643,10 +643,10 @@ var weeks = [
         showRestTime: true,
         desc: 'Total Body',
         exercises: [
-          {id: 66, sets: 4, reps: '10-12', time: null, tofail: false, name: '1a. Dumbbell Deadlifts', notes: 'Keep your head up and back flat throughout', exercisePairCode:'a'},
-          {id: 35, sets: 4, reps: '10-12', time: null, tofail: false, name: '1b. Cable/Tubing Squat to Stand Rows', notes: 'Tie in the upper and lower body together', exercisePairCode:'a'},
-          {id: 19, sets: 4, reps: '10-12', time: null, tofail: false, name: '2a. Inverted Row (Inverted Chin Up)', notes: 'Definitely try and keep your legs out now', exercisePairCode:'a'},
-          {id: 56, sets: 4, reps: '12', time: null, tofail: false, name: '2b. Rotational Pushdowns', notes: 'Alternate 6 reps to right and left each set', exercisePairCode:'a'},
+          {id: 66, sets: 4, reps: '10-12', time: null, tofail: false, name: '1a. Dumbbell Deadlifts', notes: 'Keep your head up and back flat throughout', pairCode:'a'},
+          {id: 35, sets: 4, reps: '10-12', time: null, tofail: false, name: '1b. Cable/Tubing Squat to Stand Rows', notes: 'Tie in the upper and lower body together', pairCode:'a'},
+          {id: 19, sets: 4, reps: '10-12', time: null, tofail: false, name: '2a. Inverted Row (Inverted Chin Up)', notes: 'Definitely try and keep your legs out now', pairCode:'a'},
+          {id: 56, sets: 4, reps: '12', time: null, tofail: false, name: '2b. Rotational Pushdowns', notes: 'Alternate 6 reps to right and left each set', pairCode:'a'},
           {id: 81, sets: 2, reps: '10', time: null, tofail: false, name: '3. Burpee Push Up Pyramid', notes: '1,2,3,4,5,6,7,8,9,10 reps with burpees in between each round'}
         ]
       }
