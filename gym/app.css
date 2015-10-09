@@ -47,6 +47,9 @@ md-list-item  .md-list-item-inner > md-icon:first-child.current-day-icon {
 .exercise-left-column {
   margin-top:0px;
 }
+.exercise {
+  padding: 16px;
+}
 .exercise img {
   width: 100%;
 }
