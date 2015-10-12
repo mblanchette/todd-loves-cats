@@ -651,11 +651,77 @@ var weeks = [
         ]
       }
     ]
-  }
-  // 10
+  },
+  {
+    id: 10, // WEEK 10
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Upper Body',
+        showRestTime: true,
+        exercises: [
+          {id: 36, sets: 3, reps: '12', time: null, tofail: false, name: '1a. Woodchopper Pushdowns', notes: 'Alternate 6 reps to right and left then...', pairCode:'a'},
+          {id: 76, sets: 3, reps: '/',  time: null, tofail: true,  name: '1b. Pull Ups', notes: 'proceed to pull up bar and do as many reps as you can until failure', pairCode:'b'},
+          {id: 83, sets: 3, reps: '12', time: null, tofail: false, name: '2a. Alt. DB Incline Bench', notes: 'Alternate 12 presses on each arm and then...', pairCode:'a'},
+          {id: 84, sets: 3, reps: '12', time: null, tofail: false, name: '2b. Renegade Row', notes: 'proceed immediately to the renegade row where you will row 12 times on each arm', pairCode:'b'},
+          {id: 33, sets: 3, reps: '12', time: null, tofail: false, name: '3a. Cable Rotational Push Press', notes: 'Perform a set on the right and left arms and then...', pairCode:'a'},
+          {id: 26, sets: 3, reps: '12', time: null, tofail: false, name: '3b. Rotational High Row', notes: 'move to the high row and perform a set on the right and left arm', pairCode:'b'}
+        ]
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Quick Feet Ladder',
+        showRestTime: true,
+        exercises: [
+          {id: 121, sets: 10, reps: 'through', time: null, tofail: false, name: 'QFL Lateral Run', notes: ''},
+          {id: 118, sets: 10, reps: 'through', time: null, tofail: false, name: 'QFL In In Out Out', notes: ''},
+          {id: 119, sets: 10, reps: 'through', time: null, tofail: false, name: 'QFL Icky Shuffle', notes: ''},
+          {id: 120, sets: 10, reps: 'through', time: null, tofail: false, name: 'QFL Ali Shuffle', notes: ''}
+        ]
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Lower Body',
+        exercises: [
+          {id: 10,  sets: 3, reps: '10-12', time: null, tofail: false, name: '1a. Forward Step Ups', notes: 'Perform 10-12 reps on each leg and then...', pairCode:'a'},
+          {id: 38,  sets: 3, reps: '15', time: null, tofail: false, name: '1b. Kettlebell / DB Swings', notes: 'proceed immediately into 15 reps of swings. Repeat pair 2 more times', pairCode:'b'},
+          {id: 100, sets: 3, reps: '12', time: null, tofail: false, name: '2a. Lunge Rotation Hip Press', notes: 'Perform 6 reps lunging with each leg and then...', pairCode:'a'},
+          {id: 29,  sets: 3, reps: '15', time: null, tofail: false, name: '2b. Kettlbell / DB Drop Squats', notes: 'proceed immediately into 15 reps of drop squats', pairCode:'b'},
+          {id: 77,  sets: 3, reps: '30sec', time: null, tofail: false, name: '3a. Skier (Skater) Hops', notes: 'Perform 30 seconds of Skater Hops and then...', pairCode:'a'},
+          {id: 4,   sets: 3, reps: '10', time: null, tofail: false, name: '3b. Hip Miniband Side Steps', notes: 'proceed immediately into a round trip of side steps 10 steps up and back', pairCode:'b'}
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Cardio - 400m track',
+        exercises: [
+          {id: null, sets: null, reps: '1 lap', time: null, tofail: false, name: 'Warmup jog', notes: ''},
+          {id: null, sets: null, reps: '4-5 laps', time: null, tofail: false, name: 'Sprint and Jog', notes: 'Sprint curves and jog straight-aways. Alternate 100m sprint to 100m jog twice per lap'},
+          {id: null, sets: null, reps: '1 lap', time: null, tofail: false, name: 'Cooldown jog', notes: ''}
+        ]
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Total Body',
+        exercises: [
+          {id: 71, sets: 4, reps: '10-12', time: null, tofail: false, name: '1a. DB Curl and Press', notes: 'Perform 10-12 reps of curl-presses and then...', pairCode:'a'},
+          {id: 72, sets: 4, reps: '10-12', time: null, tofail: false, name: '1b. Standing DB Row and Kickback', notes: 'proceed to row-kickbacks each set.', pairCode:'b'},
+          {id: 76, sets: 3, reps: '/', time: null, tofail: true, name: '2a. Pull Ups', notes: 'Perform as many reps as you can of a pullup and then...', pairCode:'a'},
+          {id: 25, sets: 3, reps: '/', time: null, tofail: true, name: '2b. Physioball Push Up Plus', notes: 'a physioball pushup. Rest 60 seconds and then repeat for 2 more pair sets', pairCode:'b'},
+          {id: 73, sets: 3, reps: '7', time: null, tofail: false, name: '3. 3-Way Lunge Reach', notes: 'Perform 7 reps of lunges in all 3 directions on one leg and then immediately on the other'}
+        ]
+      }
+    ]
+  } 
   // 11
   // 12 - challenge  
-  
 ];
 
 var exercises = {
