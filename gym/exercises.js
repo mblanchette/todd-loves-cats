@@ -719,8 +719,75 @@ var weeks = [
         ]
       }
     ]
-  } 
-  // 11
+  },
+  {
+    id: 11, // WEEK 11
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Upper Body',
+        showRestTime: true,
+        exercises: [
+          {id: 99, sets: 3, reps: '12', time: null, tofail: false, name: '1a. Spiderman Push Ups', notes: 'Descend into pushup with each crawl step', pairCode:'a'},
+          {id: 69, sets: 3, reps: '12', time: null, tofail: false, name: '1b. Shoulder "L" Raises', notes: 'Alternate arm forward and arm side every other rep.', pairCode:'b'},
+          {id: 76, sets: 3, reps: '/',  time: null, tofail: true, name: '2a. Pull Ups', notes: 'Do as many reps as you can until failure', pairCode:'a'},
+          {id: 79, sets: 3, reps: '10-12', time: null, tofail: false, name: '2b. Incline DB Curls', notes: 'Take advantage of the stretch reflex each rep', pairCode:'b'},
+          {id: 15, sets: 3, reps: '12-15', time: null, tofail: false, name: '3a. Tubing/Cable Tricep Push Aways', notes: 'Keep your elbows tucked against your ears', pairCode:'a'},
+          {id: 70, sets: 3, reps: '10-12', time: null, tofail: false, name: '3b. Plate Squeeze Stances', notes: 'Try the two 10 lb plates if you can handle it!', pairCode:'b'}
+        ]
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Crunches and Punches',
+        // showRestTime: true,
+        exercises: [
+          {id: null, sets: null, reps: null, time: '3min', tofail: false, name: 'Nonstop shadow/heavybag boxing ', notes: ''},
+          {id: 114,  sets: null, reps: '/', time: null, tofail: true, name: 'Scissor Kick V-Up', notes: ''},
+          {id: null, sets: null, reps: null, time: '3min', tofail: false, name: 'Nonstop shadow/heavybag boxing ', notes: ''},
+          {id: 105,  sets: null, reps: '/', time: null, tofail: true, name: 'Heel to the Heavens', notes: ''},
+          {id: null, sets: null, reps: null, time: '3min', tofail: false, name: 'Nonstop shadow/heavybag boxing ', notes: ''},
+          {id: 134,  sets: null, reps: null, time: '2min', tofail: false, name: 'Jump Rope – Boxer Shuffle', notes: ''}
+        ]
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Lower Body',
+        exercises: [
+          {id: 62, sets: 3, reps: '10', time: null, tofail: false, name: '1a. Dumbbell Side Lunge', notes: 'Do 10 reps each to the right and left and then...', pairCode:'a'},
+          {id: 86, sets: 3, reps: '12', time: null, tofail: false, name: '1b. Crossover Step Ups', notes: 'immediately do 12 reps on each leg of crossover step ups', pairCode:'b'},
+          {id: 42, sets: 3, reps: null, time: '30sec', tofail: false, name: '2a. Split Squat Jumps', notes: 'o 30 seconds of split squat jumps and proceed...', pairCode:'a'},
+          {id: null,sets:3, reps: null, time: '30sec', tofail: false, name: '2b. Box Jumps', notes: 'immediately into box jumps where you jump on and off a 16-24" box', pairCode:'b'},
+          {id: 11, sets: 3, reps: '15', time: null, tofail: false, name: '3a. Physioball High Bridges', notes: 'Do 15 reps of high bridges with your feet flat on a physioball and...', pairCode:'a'},
+          {id: 67, sets: 3, reps: '15', time: null, tofail: false, name: '3b. Physioball Leg Curls', notes: 'proceed immediately into the ball curls', pairCode:'b'}
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Free Pass - Day Off',
+        // showRestTime: true,
+        exercises: [
+        ]
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        showRestTime: true,
+        desc: 'Total Body',
+        exercises: [
+          {id: 74, sets: 4, reps: '/', time: null, tofail: true, name: '1a. BOSU Plyo Push Ups', notes: 'Do as many reps as you can on the BOSU Plyo push up and then...', pairCode:'a'},
+          {id: 63, sets: 4, reps: '10', time: null, tofail: false, name: '1b. Standing Barbell Row', notes: 'move immediately to your barbell row for 10 reps', pairCode:'b'},
+          {id: 75, sets: 4, reps: '12', time: null, tofail: false, name: '2a. DB Clean and Press', notes: 'Do 12 reps of DB Clean and Presses and then...', pairCode:'a'},
+          {id: 19, sets: 4, reps: '/', time: null, tofail: true, name: '2b. Inverted Row (legs straight)', notes: ' move immediately to Inverted Rows for as many reps as you can until failure', pairCode:'b'},
+          {id: 43, sets: 3, reps: '10-12', time: null, tofail: false, name: '3. Single Leg Squat w/ Med Ball Press', notes: 'Do 3 sets of 10-12 reps on each leg'}
+        ]
+      }
+    ]
+  }
   // 12 - challenge  
 ];
 
