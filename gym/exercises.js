@@ -759,7 +759,7 @@ var weeks = [
         exercises: [
           {id: 62, sets: 3, reps: '10', time: null, tofail: false, name: '1a. Dumbbell Side Lunge', notes: 'Do 10 reps each to the right and left and then...', pairCode:'a'},
           {id: 86, sets: 3, reps: '12', time: null, tofail: false, name: '1b. Crossover Step Ups', notes: 'immediately do 12 reps on each leg of crossover step ups', pairCode:'b'},
-          {id: 42, sets: 3, reps: null, time: '30sec', tofail: false, name: '2a. Split Squat Jumps', notes: 'o 30 seconds of split squat jumps and proceed...', pairCode:'a'},
+          {id: 42, sets: 3, reps: null, time: '30sec', tofail: false, name: '2a. Split Squat Jumps', notes: '30 seconds of split squat jumps and proceed...', pairCode:'a'},
           {id: null,sets:3, reps: null, time: '30sec', tofail: false, name: '2b. Box Jumps', notes: 'immediately into box jumps where you jump on and off a 16-24" box', pairCode:'b'},
           {id: 11, sets: 3, reps: '15', time: null, tofail: false, name: '3a. Physioball High Bridges', notes: 'Do 15 reps of high bridges with your feet flat on a physioball and...', pairCode:'a'},
           {id: 67, sets: 3, reps: '15', time: null, tofail: false, name: '3b. Physioball Leg Curls', notes: 'proceed immediately into the ball curls', pairCode:'b'}
@@ -787,8 +787,62 @@ var weeks = [
         ]
       }
     ]
+  },
+  {
+    id: 12, // WEEK 12
+    days: [
+      {
+        id: 1, // MONDAY
+        type: dayTypes.CHALLENGE.code,
+        desc: 'Challenge Retest',
+        exercises: challenges.WEEK4.exercises,
+        note: challenges.WEEK4.note,
+        rankings: challenges.WEEK4.rankings,
+        showChallengeCounter: true
+      },
+      {
+        id: 2, // TUESDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Core',
+        exercises: [
+          {id: 104, sets: 2, reps: '15', time: null, tofail: false, name: 'Jackknifes', notes: 'Do 15 reps with right leg high and 15 with left leg high each set'},
+          {id: 111, sets: 2, reps: '15', time: null, tofail: true, name: 'ISO Crunches', notes: 'Isolate the movement to use just your lower abs and obliques'},
+          {id: 114, sets: 2, reps: '15', time: null, tofail: false, name: 'Scissor Kick V-Up', notes: 'Scissor your legs nonstop and get 15 V-Ups simultaneously'},
+          {id: 117, sets: 2, reps: '20', time: null, tofail: false, name: 'Physioball Around The Worlds', notes: 'Perform 10 reps clockwise and 10 counterclockwise'}
+        ]
+      },
+      {
+        id: 3, // WEDNESDAY
+        type: dayTypes.CONDITIONING.code,
+        desc: 'Interval Walk/Jog/Run',
+        exercises: [
+          {id: null, sets: null, reps: null, time: '5min', tofail: false, name: 'Warmup jog', notes: ''},
+          {id: null, sets: null, reps: null, time: '5min', tofail: false, name: 'Interval walk/jog/run', notes: '20 second walk / 20 second jog / 20 second run'},
+          {id: null, sets: null, reps: null, time: '5min', tofail: false, name: 'Cooldown jog', notes: ''}
+        ]
+      },
+      {
+        id: 4, // THURSDAY
+        type: dayTypes.STRENGTH_TRAINING.code,
+        desc: 'Core',
+        exercises: [
+          {id: 103, sets: 2, reps: '12', time: null, tofail: false, name: 'Rollups', notes: 'Be sure to lower yourself to mat in control'},
+          {id: 106, sets: 2, reps: '20', time: null, tofail: false, name: 'Ball Passes', notes: 'Perform 10 passes each to legs and hands'},
+          {id: 112, sets: 2, reps: '30', time: null, tofail: false, name: 'Plank Opposite Knee to Elbow', notes: 'Perform 15 reps each side combo each set'},
+          {id: 110, sets: 2, reps: '/',  time: null, tofail: true,  name: 'V-Up Russian Twists', notes: 'Perform 2 sets of as many reps possible'}
+        ]
+      },
+      {
+        id: 5, // FRIDAY
+        type: dayTypes.CHALLENGE.code,
+        desc: 'Challenge',
+        exercises: challenges.WEEK12.exercises,
+        note: challenges.WEEK12.note,
+        rankings: challenges.WEEK12.rankings,
+        showChallengeCounter: false
+      }
+    ]
   }
-  // 12 - challenge  
 ];
 
 var exercises = {
